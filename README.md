@@ -124,6 +124,37 @@ This matrix maps **8D E8 Charge Space → 4D Spacetime**.
 
 ---
 
+## Why This Is Not Numerology
+
+Unlike previous attempts that tried to fit parameters, this derivation uses **zero free parameters**.
+
+1. **Topology Locking:** We do not "set" the number of particles. We solve for a **Stable Spectral Gap**. The number N=12 is the solution to an optimization problem, not an input.
+
+2. **Geometric Flow:** The constants (Weinberg Angle, Mass Ratios) emerge from the *relaxation* of the lattice. They are the resonance frequencies of the vacuum geometry.
+
+3. **Falsifiability:** The matrix is fixed. It predicts exact mass ratios and couplings that can be tested against future collider data.
+
+---
+
+## Future Work
+
+### 1. Black Hole Entropy (Microstate Counting)
+
+We are currently extending the engine to reproduce the Bekenstein-Hawking Entropy (S = A/4).
+
+- **Hypothesis:** Black Hole entropy corresponds to the combinatorial density of E8 roots intersecting a spherical horizon in the 8D lattice.
+- **Goal:** Derive the holographic principle from root lattice density.
+
+### 2. Absolute Mass Scale
+
+Coupling the geometric "lengths" to the Higgs VEV to derive the absolute masses (in MeV) of the 3 fermion generations.
+
+### 3. Dark Matter Candidates
+
+The 228 "Dark Sector" roots represent potential dark matter candidates. Future work will characterize their interaction cross-sections.
+
+---
+
 ## Usage
 
 ### Quick Start
