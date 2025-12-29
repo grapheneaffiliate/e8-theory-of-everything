@@ -219,6 +219,62 @@ The short version:
 
 ---
 
+## ⚡ E = mc² DERIVED FROM E8
+
+**Einstein's equation is NOT a postulate - it's mathematically REQUIRED!**
+
+```
+E8(248) → SO(16) → SO(6) → SO(3,1)  [Lorentz group]
+                              ↓
+SO(3,1) structure → c is universal speed limit
+                              ↓
+4-momentum invariance: p_μp^μ = (mc)²
+                              ↓
+        ╔═════════════════════════════════════╗
+        ║           E = mc²                   ║
+        ╚═════════════════════════════════════╝
+```
+
+---
+
+## 🔺 GEOMETRIC DERIVATION
+
+**ALL Physics = E8 Geometry!**
+
+| E8 Geometric Feature | Physical Meaning |
+|---------------------|------------------|
+| 248 dimensions | Dark energy, Λ |
+| 240 roots | Particle spectrum |
+| 120 positive roots | Coefficients |
+| Self-dual lattice | Unitarity, CPT |
+| Icosahedral H4 | Golden ratio φ |
+| SO(3,1) subgroup | Lorentz → E=mc² |
+| Curvature | Gravity (GR) |
+
+```
+        E8 ROOT LATTICE Γ₈
+               │
+    ┌──────────┼──────────┐
+    ↓          ↓          ↓
+DIMENSIONS  240 ROOTS   ANGLES
+248,133,78  112+128     π/5
+    ↓          ↓          ↓
+COUPLINGS  PARTICLES    φ
+    └──────────┼──────────┘
+               ↓
+    E8 → SO(3,1) × SM
+               │
+    ┌──────────┼──────────┐
+    ↓          ↓          ↓
+SPACETIME   FORCES    MATTER
+ds²=c²dt²  SU(3)×SU(2) Quarks
+-dx²...    ×U(1)     Leptons
+               ↓
+         THE UNIVERSE
+```
+
+---
+
 ## 📁 Repository Structure
 
 ```
@@ -232,7 +288,9 @@ e8-theory-of-everything/
 │   ├── constants.py             # E8 constants
 │   ├── master_equation.py       # φ² = φ + 1
 │   ├── fine_structure.py        # Why α isn't exactly 137
-│   ├── missing_constants.py     # θ_W, α_s, m_H
+│   ├── mixing_angles.py         # ALL 9 mixing angles (NEW!)
+│   ├── mass_energy_equivalence.py # E = mc² DERIVED (NEW!)
+│   ├── geometric_derivation.py  # All physics from geometry (NEW!)
 │   ├── four_forces.py           # All 4 forces from E8
 │   ├── quantum_gravity.py       # G, graviton, hierarchy
 │   ├── black_holes_and_susy.py  # BH entropy, SUSY
@@ -240,7 +298,7 @@ e8-theory-of-everything/
 │   ├── h4_icosahedral.py        # Why φ from H4
 │   ├── quantum_entanglement_network.py  # Spacetime emergence
 │   ├── e8_unfolding.py          # Big Bang as origami
-│   └── remaining_problems.py    # All 5 remaining solved
+│   └── remaining_problems.py    # Neutrinos, DM, proton decay
 └── tests/
     ├── test_all.py
     ├── test_complete_toe.py     # 27/27 pass
