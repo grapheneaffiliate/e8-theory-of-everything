@@ -27,7 +27,7 @@ class BlackHoleEntropyFromE8:
     
     def __init__(self):
         self.coxeter = COXETER_E8  # 30
-        self.positive_roots = POSITIVE_ROOTS  # 120
+        self.positive_roots = POS_ROOTS_E8  # 120
         
     def bekenstein_hawking_entropy(self) -> Dict:
         """
