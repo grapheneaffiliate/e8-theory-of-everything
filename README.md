@@ -173,12 +173,27 @@ E8 solves all problems SUSY was invented for:
 
 ---
 
+## 🌌 Why Does the Universe Exist?
+
+**See [ORIGIN.md](ORIGIN.md) for the complete answer!**
+
+The short version:
+1. **Pure nothing is logically impossible** - "There is no truth" is self-contradictory
+2. **φ² = φ + 1 is the only self-defining equation** - requires no external input
+3. **E8 is the unique self-consistent structure** - self-dual, maximal, contains φ
+4. **E8 must break → Standard Model → Universe**
+
+**The universe exists because it MUST exist.**
+
+---
+
 ## 📁 Repository Structure
 
 ```
 e8-theory-of-everything/
-├── README.md              # This file
-├── PAPER.md               # Full theory paper
+├── README.md              # This file - What we predict
+├── ORIGIN.md              # Why existence? Why E8?
+├── PAPER.md               # Full theory paper - How it works
 ├── ALL_COEFFICIENTS.md    # Complete coefficient reference
 ├── TOE_CHECKLIST.md       # Completeness tracking
 ├── core/

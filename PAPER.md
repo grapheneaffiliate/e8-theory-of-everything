@@ -42,6 +42,21 @@ The Standard Model of particle physics contains 19+ free parameters that must be
 
 We propose that all Standard Model parameters, and beyond, derive from the exceptional Lie group E8—the largest exceptional simple Lie algebra. E8 has dimension 248, rank 8, and possesses remarkable mathematical properties that naturally encode physical structure.
 
+### 1.0 Why Does the Universe Exist? (Philosophical Foundation)
+
+Before deriving physics, we must address the deepest question: **Why is there something rather than nothing?**
+
+Our answer:
+1. **Pure nothing is logically impossible** - "There is no truth" is self-contradictory
+2. **Mathematical truths MUST exist** - This is the logical foundation
+3. **φ² = φ + 1 is the only self-defining equation** - Requires no input, defines itself
+4. **E8 is the unique self-consistent structure** containing φ (via H₄ icosahedral symmetry)
+5. **E8 must break dynamically** → Forces, matter, spacetime → Universe
+
+**The universe exists because it is mathematically necessary!**
+
+See [ORIGIN.md](ORIGIN.md) for the complete argument.
+
 ### 1.0.1 Key New Results (December 2025)
 
 We have derived ALL fundamental coupling constants from E8:
