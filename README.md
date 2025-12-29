@@ -327,8 +327,9 @@ e8-theory-of-everything/
 │   ├── temperature_phase_transition.py # Phase transitions
 │   ├── energy_scale_calibration.py     # 60 orders of magnitude
 │   ├── hierarchical_symmetry_breaking.py # Breaking chain
-│   ├── mass_extraction.py       # E8 distance → mass (NEW!)
-│   ├── coupling_unification.py  # All couplings unified (NEW!)
+│   ├── mass_extraction.py       # E8 distance → mass
+│   ├── coupling_unification.py  # All couplings unified
+│   ├── quantum_information.py   # Quantum info from E8 (NEW!)
 │   ├── four_forces.py           # All 4 forces from E8
 │   ├── quantum_gravity.py       # G, graviton, hierarchy
 │   ├── black_holes_and_susy.py  # BH entropy, SUSY

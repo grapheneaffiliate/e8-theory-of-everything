@@ -821,6 +821,7 @@ $$G = \frac{C_2(E8)}{dim(E8) \times \phi^8 \times M_{GUT}^2}$$
 | `hierarchical_symmetry_breaking.py` | Complete mass predictions |
 | `mass_extraction.py` | E8 distance → mass correlation |
 | `coupling_unification.py` | All gauge couplings unified |
+| `quantum_information.py` | Quantum info from E8 |
 | `four_forces.py` | 4 forces from E8 |
 | `quantum_gravity.py` | G, hierarchy |
 | `cosmological_constant.py` | Λ problem |
