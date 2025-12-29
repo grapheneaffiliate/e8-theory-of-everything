@@ -324,9 +324,11 @@ e8-theory-of-everything/
 │   ├── mixing_angles.py         # ALL 9 mixing angles
 │   ├── mass_energy_equivalence.py # E = mc² DERIVED
 │   ├── geometric_derivation.py  # All physics from geometry
-│   ├── temperature_phase_transition.py # Phase transitions (NEW!)
-│   ├── energy_scale_calibration.py     # 60 orders (NEW!)
-│   ├── hierarchical_symmetry_breaking.py # Breaking chain (NEW!)
+│   ├── temperature_phase_transition.py # Phase transitions
+│   ├── energy_scale_calibration.py     # 60 orders of magnitude
+│   ├── hierarchical_symmetry_breaking.py # Breaking chain
+│   ├── mass_extraction.py       # E8 distance → mass (NEW!)
+│   ├── coupling_unification.py  # All couplings unified (NEW!)
 │   ├── four_forces.py           # All 4 forces from E8
 │   ├── quantum_gravity.py       # G, graviton, hierarchy
 │   ├── black_holes_and_susy.py  # BH entropy, SUSY
