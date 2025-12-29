@@ -4,9 +4,25 @@
 
 ---
 
+## The Master Equation
+
+All of physics emerges from a single equation:
+
+```
+                    φ² = φ + 1
+                    
+        where φ operates on the E8 root lattice Γ₈
+```
+
+This is the defining equation of the golden ratio φ = (1+√5)/2 = 1.618033988749895...
+
+When applied within the E8 framework, this single equation generates ALL physical constants.
+
+---
+
 ## Abstract
 
-We present a unified theoretical framework deriving all fundamental physical constants from the exceptional Lie group E8. Using only the mathematical structure of E8 and the golden ratio φ (which emerges naturally from E8's root system), we successfully predict 30+ observable quantities with errors below 1%. The theory contains zero adjustable parameters—every prediction follows from pure group theory mathematics.
+We present a unified theoretical framework deriving all fundamental physical constants from the exceptional Lie group E8 and the Master Equation φ² = φ + 1. Using only the mathematical structure of E8 and the golden ratio φ (which emerges naturally from E8's icosahedral H4 subgroup), we successfully predict 30+ observable quantities with errors below 1%. The theory contains zero adjustable parameters—every prediction follows from pure group theory mathematics.
 
 **Key Results:**
 - All 6 quark masses: EXACT coefficients from E8
