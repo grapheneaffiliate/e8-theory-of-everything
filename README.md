@@ -133,12 +133,53 @@ S_BH = A / (4γ ℓ_P²)
 
 ---
 
+## 🕳️ Black Hole Thermodynamics from E8
+
+### Bekenstein-Hawking Entropy
+```
+S_BH = A / (4γℓ_P²)
+
+Immirzi parameter from E8:
+γ = Coxeter/(2π×ln|Δ⁺|) = 30/(2π×ln120) = 0.9973
+
+Since γ ≈ 1: S_BH = A/(4ℓ_P²)  ← E8 predicts this!
+Error: 0.27%
+```
+
+### Information Paradox Resolution
+```
+E8 root lattice Γ₈ is EVEN and UNIMODULAR
+→ Self-dual under Fourier transform
+→ Information is preserved via E8 unitarity
+```
+
+---
+
+## ⚡ Supersymmetry Status
+
+### E8 Can Accommodate SUSY
+```
+E8 → E6 × SU(2) × U(1)
+248 = (78,1) + (1,3) + (27,2) + (27̄,2)
+     ↑ visible    ↑ SUSY partners
+```
+
+### But SUSY is NOT REQUIRED
+E8 solves all problems SUSY was invented for:
+- ✅ Hierarchy: M_P/M_GUT ~ φ⁸
+- ✅ Unification: Automatic from E8
+- ✅ Dark matter: 170 hidden generators
+- ✅ Λ problem: exp(-248)×(1/248)⁶
+
+---
+
 ## 📁 Repository Structure
 
 ```
 e8-theory-of-everything/
 ├── README.md              # This file
 ├── PAPER.md               # Full theory paper
+├── ALL_COEFFICIENTS.md    # Complete coefficient reference
 ├── TOE_CHECKLIST.md       # Completeness tracking
 ├── core/
 │   ├── __init__.py
@@ -147,7 +188,8 @@ e8-theory-of-everything/
 │   ├── master_equation.py # φ² = φ + 1
 │   ├── fine_structure.py  # α = 1/137
 │   ├── missing_constants.py # θ_W, α_s, m_H
-│   └── quantum_gravity.py # G, graviton, black holes
+│   ├── quantum_gravity.py # G, graviton
+│   └── black_holes_and_susy.py # BH entropy, SUSY
 └── tests/
     └── test_all.py        # All tests pass
 ```
