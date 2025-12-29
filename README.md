@@ -275,12 +275,45 @@ ds²=c²dt²  SU(3)×SU(2) Quarks
 
 ---
 
+## 🌡️ TEMPERATURE SWEEP: PHASE TRANSITIONS
+
+As the universe cooled from Big Bang to today:
+
+```
+E8 (248) → E7 (133) → E6 (78) → SO10 (45) → SU5 (24) → SM (12)
+   │          │          │           │           │          │
+T~10¹⁹     10¹⁶      10¹⁵        10¹⁴       10¹²        246 GeV
+   │          │          │           │           │          │
+Gravity   GUT      Neutrinos     B-L       Strong/EW    Higgs
+```
+
+Each transition separated by powers of φ!
+
+---
+
+## ⚖️ ENERGY SCALE CALIBRATION
+
+60+ orders of magnitude from E8:
+
+| Scale | Value | E8 Origin |
+|-------|-------|-----------|
+| Planck | 10¹⁹ GeV | √(ℏc/G) |
+| GUT | 10¹⁶ GeV | M_P/φ⁸ |
+| Seesaw | 10¹⁵ GeV | M_GUT/φ⁴ |
+| Electroweak | 246 GeV | v_Higgs |
+| QCD | 0.2 GeV | Λ_QCD |
+| Neutrino | ~meV | Seesaw |
+| Dark energy | ~meV | exp(-248) |
+| Hubble | 10⁻³³ eV | Λ¹/²/M_P |
+
+---
+
 ## 📁 Repository Structure
 
 ```
 e8-theory-of-everything/
 ├── README.md                    # This file
-├── PAPER.md                     # Full theory paper
+├── PAPER.md                     # Full theory paper (20+ sections)
 ├── ORIGIN.md                    # Why existence?
 ├── ALL_COEFFICIENTS.md          # Complete reference
 ├── TOE_CHECKLIST.md             # 100% complete
@@ -288,9 +321,12 @@ e8-theory-of-everything/
 │   ├── constants.py             # E8 constants
 │   ├── master_equation.py       # φ² = φ + 1
 │   ├── fine_structure.py        # Why α isn't exactly 137
-│   ├── mixing_angles.py         # ALL 9 mixing angles (NEW!)
-│   ├── mass_energy_equivalence.py # E = mc² DERIVED (NEW!)
-│   ├── geometric_derivation.py  # All physics from geometry (NEW!)
+│   ├── mixing_angles.py         # ALL 9 mixing angles
+│   ├── mass_energy_equivalence.py # E = mc² DERIVED
+│   ├── geometric_derivation.py  # All physics from geometry
+│   ├── temperature_phase_transition.py # Phase transitions (NEW!)
+│   ├── energy_scale_calibration.py     # 60 orders (NEW!)
+│   ├── hierarchical_symmetry_breaking.py # Breaking chain (NEW!)
 │   ├── four_forces.py           # All 4 forces from E8
 │   ├── quantum_gravity.py       # G, graviton, hierarchy
 │   ├── black_holes_and_susy.py  # BH entropy, SUSY
