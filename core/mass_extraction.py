@@ -15,6 +15,9 @@ Date: December 29, 2025
 import numpy as np
 from constants import *
 
+# Local aliases for cleaner code
+POS_ROOTS = POS_ROOTS_E8
+
 
 class E8MassExtraction:
     """
