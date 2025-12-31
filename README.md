@@ -174,12 +174,13 @@ Module Execution Status:
 e8-theory-of-everything/
 │
 ├── README.md                    # This file - complete guide
+├── PERFECT_PAPER.md             # 📜 v2.0: "The Geometric Standard Model" (MAIN PAPER)
 ├── run_unified_theory.py        # 🚀 MAIN ENTRY POINT (v2.0: 16 modules)
 ├── .gitignore                   # Git ignore rules
 │
 ├── docs/                        # 📚 DOCUMENTATION
 │   ├── E8_FINAL_2025.md             # Complete scientific manuscript
-│   ├── PERFECT_PAPER.md             # 🆕 v2.0: "The Geometric Standard Model"
+│   ├── CHANGELOG.md                 # Version history
 │   ├── THEORETICAL_FOUNDATION.md    # Mathematical foundations
 │   ├── UNIFIED_ENGINE_GUIDE.md      # Detailed usage guide
 │   └── LIMITATIONS_AND_REFINEMENTS.md  # Known limitations
