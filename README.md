@@ -15,12 +15,13 @@
 2. [Quick Start](#quick-start)
 3. [Repository Structure](#repository-structure)
 4. [How to Use This Repository](#how-to-use-this-repository)
-5. [The Master Equation](#the-master-equation)
-6. [Complete Results](#complete-results)
-7. [Module Reference](#module-reference)
-8. [Verified Physics](#verified-physics)
-9. [Experimental Tests](#experimental-tests)
-10. [Citation](#citation)
+5. [The Complete Master Equation](#the-complete-master-equation)
+6. [Dynamical Field Theory](#dynamical-field-theory)
+7. [Complete Results](#complete-results)
+8. [Module Reference](#module-reference)
+9. [Verified Physics](#verified-physics)
+10. [Experimental Tests](#experimental-tests)
+11. [Citation](#citation)
 
 ---
 
@@ -119,6 +120,7 @@ e8-theory-of-everything/
 ├── physics/                     # 🔬 CORE ENGINE & ADVANCED MODULES
 │   ├── e8_constants.py              # E8 root definitions & UNIVERSE_MATRIX
 │   ├── e8_unified_engine.py         # Main computational engine
+│   ├── e8_dynamical_field_theory.py # 🆕 COMPLETE DYNAMICAL QFT
 │   ├── neutrino_sector.py           # [9] Neutrino masses, PMNS matrix
 │   ├── ckm_matrix.py                # [10] CKM matrix, Wolfenstein
 │   ├── e8_graviton_hunter.py        # Graviton composite search
