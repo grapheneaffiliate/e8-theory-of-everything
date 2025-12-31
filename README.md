@@ -174,16 +174,17 @@ Module Execution Status:
 e8-theory-of-everything/
 │
 ├── README.md                    # This file - complete guide
-├── run_unified_theory.py        # 🚀 MAIN ENTRY POINT - runs all modules
+├── run_unified_theory.py        # 🚀 MAIN ENTRY POINT (v2.0: 16 modules)
 ├── .gitignore                   # Git ignore rules
 │
 ├── docs/                        # 📚 DOCUMENTATION
 │   ├── E8_FINAL_2025.md             # Complete scientific manuscript
+│   ├── PERFECT_PAPER.md             # 🆕 v2.0: "The Geometric Standard Model"
 │   ├── THEORETICAL_FOUNDATION.md    # Mathematical foundations
 │   ├── UNIFIED_ENGINE_GUIDE.md      # Detailed usage guide
 │   └── LIMITATIONS_AND_REFINEMENTS.md  # Known limitations
 │
-├── modules/                     # ⚙️ CORE PHYSICS MODULES (10 scripts)
+├── modules/                     # ⚙️ CORE PHYSICS MODULES (8 scripts)
 │   ├── explicit_calculations.py     # [1] Weinberg angle derivation
 │   ├── gauge_boson_assignment.py    # [2] SU(3)×SU(2)×U(1) structure
 │   ├── fermion_mapping.py           # [3] Quark/lepton generation shells
@@ -195,12 +196,23 @@ e8-theory-of-everything/
 │   ├── deep_simulation.py           # Extended simulations
 │   └── fix_encoding.py              # Windows compatibility fix
 │
-├── physics/                     # 🔬 CORE ENGINE & ADVANCED MODULES
+├── physics/                     # 🔬 CORE ENGINE & DYNAMICAL SIMULATIONS
 │   ├── e8_constants.py              # E8 root definitions & UNIVERSE_MATRIX
 │   ├── e8_unified_engine.py         # Main computational engine
-│   ├── e8_dynamical_field_theory.py # 🆕 COMPLETE DYNAMICAL QFT
+│   │
+│   │   # 🆕 v2.0 DYNAMICAL FIELD THEORY SIMULATIONS
+│   ├── e8_dynamical_field_theory.py # Complete dynamical QFT engine
+│   ├── mass_spectrum_analysis.py    # 6 particle families, φ = 1.5954
+│   ├── physical_constants_derivation.py  # α = 1/137.51 from golden angle
+│   ├── e8_wave_equation.py          # Higgs wave (massive, v = 0.9474c)
+│   ├── e8_gauge_field.py            # Photon wave (massless, v = 1.09c)
+│   ├── e8_gravity.py                # Gravity h = -GM/r (R² = 0.9999)
+│   │
+│   │   # FLAVOR & MIXING PHYSICS
 │   ├── neutrino_sector.py           # [9] Neutrino masses, PMNS matrix
 │   ├── ckm_matrix.py                # [10] CKM matrix, Wolfenstein
+│   │
+│   │   # ANALYSIS TOOLS
 │   ├── e8_graviton_hunter.py        # Graviton composite search
 │   ├── e8_dark_matter.py            # Dark matter analysis
 │   ├── e8_mass_analyzer.py          # Mass scale predictions
@@ -280,34 +292,6 @@ The `docs/` folder contains comprehensive documentation:
 ### 5. Check Results
 
 All numerical outputs are documented in `results/FULL_OUTPUT_SUMMARY.md`.
-
----
-
-## The Master Equation
-
-```
-                              240
-              Z[Universe] = Σ   exp( -S[P·r] / ℏ )
-                             r∈E8
-
-    where:
-        P = UNIVERSE_MATRIX (4×8 orthogonal projection)
-        r = E8 root vectors (240 roots in 8D)
-        S = Action functional
-```
-
-### The Universe Matrix
-
-This single **4×8 orthogonal matrix** encodes all fundamental physics:
-
-```python
-UNIVERSE_MATRIX = np.array([
-    [-0.864, -0.088, -0.146,  0.022,  0.232,  0.308,  0.251,  0.112],
-    [ 0.016, -0.107,  0.314, -0.492, -0.118,  0.090, -0.108,  0.784],
-    [-0.246,  0.658, -0.414, -0.264, -0.262, -0.419, -0.118,  0.087],
-    [-0.103, -0.131,  0.085, -0.234, -0.819,  0.304,  0.202, -0.327],
-])
-```
 
 ---
 
