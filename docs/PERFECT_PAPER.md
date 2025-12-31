@@ -255,6 +255,8 @@ The fine structure constant α = 1/137.036 has no known derivation in the Standa
 
 This connects α to the **golden angle** (137.5°), the angle that appears throughout icosahedral geometry.
 
+The geometric coupling strength of the vacuum strain is found to be **φ⁻² ≈ 0.382** (38.2%), exactly the inverse square of the golden ratio. This dimensionless constant fundamentally sets the scale for all electromagnetic interactions in the E8 framework.
+
 ### 6.2 Physical Interpretation
 
 The golden angle is the optimal angle for packing objects without crystalline order—it is the "most irrational" angle. In the E8→H4 quasicrystal:
