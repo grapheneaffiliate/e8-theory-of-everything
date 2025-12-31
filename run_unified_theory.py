@@ -42,22 +42,22 @@ BANNER = """
 # All validated modules in execution order
 MODULES = [
     # Phase 1: Gauge Sector
-    ("explicit_calculations.py", "Weinberg Angle Derivation", "sin^2theta_W = 99.88% accuracy"),
-    ("gauge_boson_assignment.py", "Gauge Boson Assignment", "SU(3)xSU(2)xU(1) structure"),
+    ("modules/explicit_calculations.py", "Weinberg Angle Derivation", "sin^2theta_W = 99.88% accuracy"),
+    ("modules/gauge_boson_assignment.py", "Gauge Boson Assignment", "SU(3)xSU(2)xU(1) structure"),
     
     # Phase 2: Fermion Sector
-    ("fermion_mapping.py", "Fermion Mapping", "3 generation shells"),
-    ("chirality_triality.py", "Chirality & Triality", "SO(8) structure, L/R balance"),
-    ("so10_decomposition.py", "SO(10) Decomposition", "48/48 SM fermions exact"),
+    ("modules/fermion_mapping.py", "Fermion Mapping", "3 generation shells"),
+    ("modules/chirality_triality.py", "Chirality & Triality", "SO(8) structure, L/R balance"),
+    ("modules/so10_decomposition.py", "SO(10) Decomposition", "48/48 SM fermions exact"),
     
     # Phase 3: Dark Sector
-    ("dark_matter_candidates.py", "Dark Matter Candidates", "WIMPs at 309 GeV"),
+    ("modules/dark_matter_candidates.py", "Dark Matter Candidates", "WIMPs at 309 GeV"),
     
     # Phase 4: Cosmology & Gravity
-    ("cosmology_predictions.py", "Cosmology Predictions", "Graviton m=0, Omega=19"),
+    ("modules/cosmology_predictions.py", "Cosmology Predictions", "Graviton m=0, Omega=19"),
     
     # Phase 5: Statistical Validation
-    ("p_chance_calculation.py", "Statistical Significance", "p = 7x10^-^1^2 (6.9sigma)"),
+    ("modules/p_chance_calculation.py", "Statistical Significance", "p = 7x10^-^1^2 (6.9sigma)"),
 ]
 
 # Physics submodules

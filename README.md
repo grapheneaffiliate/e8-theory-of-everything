@@ -167,24 +167,33 @@ This single **4×8 orthogonal projection matrix** encodes ALL fundamental physic
 
 ```
 e8-theory-of-everything/
-├── run_unified_theory.py        # Master runner (10 modules)
-├── fix_encoding.py              # Windows compatibility
-├── e8_constants.py              # Core E8 definitions
-├── explicit_calculations.py     # Weinberg angle
-├── gauge_boson_assignment.py    # SU(3)×SU(2)×U(1)
-├── fermion_mapping.py           # Quark/lepton shells
-├── chirality_triality.py        # SO(8) triality
-├── so10_decomposition.py        # 48/48 SM fermions
-├── dark_matter_candidates.py    # WIMPs @ 309 GeV
-├── cosmology_predictions.py     # Graviton, vacuum energy
-├── p_chance_calculation.py      # 6.9σ significance
-├── physics/
-│   ├── neutrino_sector.py       # Type-I see-saw
-│   ├── ckm_matrix.py            # Wolfenstein parameters
-│   └── e8_unified_engine.py     # Core engine
-├── E8_FINAL_2025.md             # Complete manuscript
-├── FULL_OUTPUT_SUMMARY.md       # All numerical results
-└── README.md                    # This file
+├── README.md                        # This file
+├── run_unified_theory.py            # Master runner (10 modules)
+│
+├── docs/                            # Documentation
+│   ├── E8_FINAL_2025.md             # Complete manuscript
+│   ├── THEORETICAL_FOUNDATION.md    # Physics foundations
+│   ├── UNIFIED_ENGINE_GUIDE.md      # Usage guide
+│   └── LIMITATIONS_AND_REFINEMENTS.md
+│
+├── modules/                         # Core physics modules
+│   ├── explicit_calculations.py     # Weinberg angle (99.88%)
+│   ├── gauge_boson_assignment.py    # SU(3)×SU(2)×U(1)
+│   ├── fermion_mapping.py           # Quark/lepton shells
+│   ├── chirality_triality.py        # SO(8) triality
+│   ├── so10_decomposition.py        # 48/48 SM fermions
+│   ├── dark_matter_candidates.py    # WIMPs @ 309 GeV
+│   ├── cosmology_predictions.py     # Graviton, vacuum energy
+│   └── p_chance_calculation.py      # 6.9σ significance
+│
+├── physics/                         # Advanced physics
+│   ├── e8_constants.py              # Core E8 definitions
+│   ├── e8_unified_engine.py         # Core engine
+│   ├── neutrino_sector.py           # Type-I see-saw
+│   └── ckm_matrix.py                # Wolfenstein parameters
+│
+└── results/                         # Output summaries
+    └── FULL_OUTPUT_SUMMARY.md       # All numerical results
 ```
 
 ---
