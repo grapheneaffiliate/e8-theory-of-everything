@@ -122,32 +122,30 @@ MIXING ANGLES - GEOMETRIC DERIVATION
 
 All parameters derived from golden ratio φ = {self.phi:.6f}:
 
-┌────────────────────────────────────────────────────────────────────┐
-│  ANGLE  │  FORMULA              │  DERIVED  │  EXPT   │  ERROR    │
-├────────────────────────────────────────────────────────────────────┤
-│  θ₁₂    │  arcsin(√(φ⁻¹/2))     │  {np.degrees(theta12):.2f}°    │ 33.44°  │  {abs(np.degrees(theta12)-33.44):.2f}°    │
-│  θ₂₃    │  arcsin(√((2φ-1)/(2φ+1))) │  {np.degrees(theta23):.2f}°    │ 49.0°   │  {abs(np.degrees(theta23)-49.0):.2f}°    │
-│  θ₁₃    │  arcsin(φ⁻⁴)          │  {np.degrees(theta13):.2f}°     │ 8.57°   │  {abs(np.degrees(theta13)-8.57):.2f}°    │
-│  δ      │  π + arcsin(φ⁻³)      │  {np.degrees(delta):.1f}°   │ 195°    │  {abs(np.degrees(delta)-195):.1f}°    │
-└────────────────────────────────────────────────────────────────────┘
+  ANGLE     FORMULA                    DERIVED      EXPT       ERROR
+  ---------------------------------------------------------------------
+  theta12   arcsin(sqrt(phi^-1/2))     {np.degrees(theta12):.2f} deg   33.44 deg  {abs(np.degrees(theta12)-33.44):.2f} deg
+  theta23   arcsin(sqrt((2phi-1)/(2phi+1)))  {np.degrees(theta23):.2f} deg   49.0 deg   {abs(np.degrees(theta23)-49.0):.2f} deg
+  theta13   arcsin(phi^-4)             {np.degrees(theta13):.2f} deg    8.57 deg   {abs(np.degrees(theta13)-8.57):.2f} deg
+  delta     pi + arcsin(phi^-3)        {np.degrees(delta):.1f} deg    195 deg    {abs(np.degrees(delta)-195):.1f} deg
 
 Physical Interpretation:
 
-  θ₁₂ = arcsin(√(φ⁻¹/2)) ≈ 33.8° (solar angle):
+  theta12 = arcsin(sqrt(phi^-1/2)) ~ 33.8 deg (solar angle):
     The solar neutrino mixing comes from the Type-I see-saw mechanism.
-    The ratio sin²θ₁₂ = (φ-1)/2 = φ⁻¹/2 reflects the geometric structure
-    of the Dirac-Majorana mass matrix in E8.
+    The ratio sin^2(theta12) = (phi-1)/2 = phi^-1/2 reflects the geometric 
+    structure of the Dirac-Majorana mass matrix in E8.
     
-  θ₂₃ = arcsin(√((2φ-1)/(2φ+1))) ≈ 46.6° (atmospheric angle):
+  theta23 = arcsin(sqrt((2phi-1)/(2phi+1))) ~ 46.6 deg (atmospheric angle):
     Near-maximal atmospheric mixing from the golden ratio. The expression
-    (2φ-1)/(2φ+1) naturally emerges from generation-crossing terms.
+    (2phi-1)/(2phi+1) naturally emerges from generation-crossing terms.
     
-  θ₁₃ = arcsin(φ⁻⁴) ≈ 8.4° (reactor angle):
-    The small reactor angle comes from the fourth power of φ⁻¹,
+  theta13 = arcsin(phi^-4) ~ 8.4 deg (reactor angle):
+    The small reactor angle comes from the fourth power of phi^-1,
     representing a fourth-order perturbation in the mixing structure.
     
-  δ = π + arcsin(φ⁻³) ≈ 194° (CP phase):
-    The leptonic CP phase is offset by π from the quark sector,
+  delta = pi + arcsin(phi^-3) ~ 194 deg (CP phase):
+    The leptonic CP phase is offset by pi from the quark sector,
     reflecting the different chirality structure of the see-saw.
 """)
         
@@ -162,10 +160,10 @@ sin² FORM COMPARISON
 {'='*70}
 
   Parameter     Formula              Derived    Experiment    Error
-  ─────────────────────────────────────────────────────────────────
-  sin²θ₁₂       φ⁻¹/2                {sin2_12:.4f}     {exp['sin2_12']:.4f}        {abs(sin2_12-exp['sin2_12'])/exp['sin2_12']*100:.1f}%
-  sin²θ₂₃       (2φ-1)/(2φ+1)        {sin2_23:.4f}     {exp['sin2_23']:.4f}        {abs(sin2_23-exp['sin2_23'])/exp['sin2_23']*100:.1f}%
-  sin²θ₁₃       φ⁻⁸                  {sin2_13:.4f}     {exp['sin2_13']:.4f}        {abs(sin2_13-exp['sin2_13'])/exp['sin2_13']*100:.1f}%
+  -----------------------------------------------------------------
+  sin^2(th12)   phi^-1/2             {sin2_12:.4f}     {exp['sin2_12']:.4f}        {abs(sin2_12-exp['sin2_12'])/exp['sin2_12']*100:.1f}%
+  sin^2(th23)   (2phi-1)/(2phi+1)    {sin2_23:.4f}     {exp['sin2_23']:.4f}        {abs(sin2_23-exp['sin2_23'])/exp['sin2_23']*100:.1f}%
+  sin^2(th13)   phi^-8               {sin2_13:.4f}     {exp['sin2_13']:.4f}        {abs(sin2_13-exp['sin2_13'])/exp['sin2_13']*100:.1f}%
 """)
         
         # Construct PMNS matrix
@@ -178,11 +176,9 @@ PMNS MATRIX (magnitudes)
 {'='*70}
 
 Derived |U_PMNS|:
-  ┌                                           ┐
-  │  {U_mag[0,0]:.4f}    {U_mag[0,1]:.4f}    {U_mag[0,2]:.4f}  │
-  │  {U_mag[1,0]:.4f}    {U_mag[1,1]:.4f}    {U_mag[1,2]:.4f}  │
-  │  {U_mag[2,0]:.4f}    {U_mag[2,1]:.4f}    {U_mag[2,2]:.4f}  │
-  └                                           ┘
+  [  {U_mag[0,0]:.4f}    {U_mag[0,1]:.4f}    {U_mag[0,2]:.4f}  ]
+  [  {U_mag[1,0]:.4f}    {U_mag[1,1]:.4f}    {U_mag[1,2]:.4f}  ]
+  [  {U_mag[2,0]:.4f}    {U_mag[2,1]:.4f}    {U_mag[2,2]:.4f}  ]
 """)
         
         # Mass squared differences
@@ -191,19 +187,19 @@ Derived |U_PMNS|:
 NEUTRINO MASS PREDICTIONS
 {'='*70}
 
-The Type-I see-saw mechanism with M_R ~ √μ × M_Pl gives:
+The Type-I see-saw mechanism with M_R ~ sqrt(mu) x M_Pl gives:
 
-  Light neutrino mass scale: m_ν ~ v²/M_R ~ (246 GeV)²/(10²⁰ GeV)
-                                 ~ 10⁻³ eV
+  Light neutrino mass scale: m_nu ~ v^2/M_R ~ (246 GeV)^2/(10^20 GeV)
+                                  ~ 10^-3 eV
 
   This is consistent with oscillation data!
 
   Mass hierarchy from golden ratio:
-    m₂/m₁ ~ φ     (normal hierarchy)
-    m₃/m₂ ~ φ     
+  m2/m1 ~ phi   (normal hierarchy)
+    m3/m2 ~ phi     
 
-  Δm²₂₁ ~ m₁² × (φ² - 1) ~ 7.5 × 10⁻⁵ eV² ✓
-  Δm²₃₁ ~ m₁² × φ⁴       ~ 2.4 × 10⁻³ eV² ✓
+  Dm^2_21 ~ m1^2 x (phi^2 - 1) ~ 7.5 x 10^-5 eV^2 [OK]
+  Dm^2_31 ~ m1^2 x phi^4       ~ 2.4 x 10^-3 eV^2 [OK]
 """)
         
         # Summary
@@ -212,10 +208,10 @@ The Type-I see-saw mechanism with M_R ~ √μ × M_Pl gives:
 SUMMARY: PMNS FROM GOLDEN RATIO GEOMETRY
 {'='*70}
 
-  ✓ Solar angle θ₁₂: sin²θ₁₂ = φ⁻¹/2           [1.7% error]
-  ✓ Atmospheric θ₂₃: sin²θ₂₃ = (2φ-1)/(2φ+1)   [7.4% error]
-  ✓ Reactor angle θ₁₃: sin(θ₁₃) = φ⁻⁴          [2.0% error]
-  ✓ CP phase δ: δ = π + arcsin(φ⁻³)            [1.3° error]
+  [OK] Solar angle theta12: sin^2(th12) = phi^-1/2       [1.7% error]
+  [OK] Atmospheric theta23: sin^2(th23) = (2phi-1)/(2phi+1) [7.4% error]
+  [OK] Reactor angle theta13: sin(th13) = phi^-4         [2.0% error]
+  [OK] CP phase delta: delta = pi + arcsin(phi^-3)       [1.3 deg error]
   
   The PMNS matrix structure emerges from:
   1. E8 root geometry (golden ratio)

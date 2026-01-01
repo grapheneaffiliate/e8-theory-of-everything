@@ -102,33 +102,31 @@ WOLFENSTEIN PARAMETERS - GEOMETRIC DERIVATION
 
 All parameters derived from golden ratio φ = {self.phi:.6f}:
 
-┌─────────────────────────────────────────────────────────────────────┐
-│  PARAMETER │  FORMULA              │  VALUE   │  EXPT   │  ERROR   │
-├─────────────────────────────────────────────────────────────────────┤
-│     λ      │  φ⁻³                  │  {lam:.4f}  │ 0.2265  │  {abs(lam-0.2265)/0.2265*100:.1f}%   │
-│     A      │  1/√φ = φ⁻¹/²         │  {A:.4f}  │ 0.790   │  {abs(A-0.790)/0.790*100:.1f}%   │
-│     ρ      │  1/(2π)               │  {rho:.4f}  │ 0.159   │  {abs(rho-0.159)/0.159*100:.1f}%   │
-│     η      │  tan(½arcsin(φ⁻¹))    │  {eta:.4f}  │ 0.348   │  {abs(eta-0.348)/0.348*100:.1f}%   │
-└─────────────────────────────────────────────────────────────────────┘
+  PARAMETER   FORMULA                VALUE      EXPT       ERROR
+  -----------------------------------------------------------------
+  lambda      phi^-3                 {lam:.4f}     0.2265     {abs(lam-0.2265)/0.2265*100:.1f}%
+  A           1/sqrt(phi)            {A:.4f}     0.790      {abs(A-0.790)/0.790*100:.1f}%
+  rho         1/(2*pi)               {rho:.4f}     0.159      {abs(rho-0.159)/0.159*100:.1f}%
+  eta         tan(arcsin(phi^-1)/2)  {eta:.4f}     0.348      {abs(eta-0.348)/0.348*100:.1f}%
 
 Physical Interpretation:
 
-  λ = φ⁻³ (Cabibbo angle):
-    The E8→H4 projection loses 4 of 8 dimensions. Each "lost" dimension
-    contributes a factor of φ⁻¹ to the generation misalignment. 
-    For adjacent generations (1↔2): misalignment = (φ⁻¹)³ = φ⁻³ ≈ 0.236
+  lambda = phi^-3 (Cabibbo angle):
+    The E8->H4 projection loses 4 of 8 dimensions. Each lost dimension
+    contributes a factor of phi^-1 to the generation misalignment.
+    For adjacent generations (1<->2): misalignment = (phi^-1)^3 ~ 0.236
     
-  A = 1/√φ (2-3 mixing ratio):
-    The mass hierarchy between generations follows φ. The mixing
+  A = 1/sqrt(phi) (2-3 mixing ratio):
+    The mass hierarchy between generations follows phi. The mixing
     suppression between gen-2 and gen-3 relative to gen-1 and gen-2
-    is √φ⁻¹ because mixing ∝ √(mass ratio).
+    is sqrt(phi)^-1 because mixing ~ sqrt(mass ratio).
     
-  ρ = 1/(2π) (CP real part):
-    The Stiefel manifold V₄(ℝ⁸) has rotational symmetry. The CP phase
-    accumulates over a full 2π rotation, giving ρ = 1/(2π).
+  rho = 1/(2*pi) (CP real part):
+    The Stiefel manifold V4(R^8) has rotational symmetry. The CP phase
+    accumulates over a full 2*pi rotation, giving rho = 1/(2*pi).
     
-  η = tan(arcsin(φ⁻¹)/2) (CP imaginary part):
-    The angle arcsin(φ⁻¹) ≈ 38.17° is the projection angle between
+  eta = tan(arcsin(phi^-1)/2) (CP imaginary part):
+    The angle arcsin(phi^-1) ~ 38.17 deg is the projection angle between
     up-type and down-type quark sectors. The half-angle tangent gives
     the imaginary part of the CP phase.
 """)
@@ -144,18 +142,14 @@ CKM MATRIX (DERIVED vs EXPERIMENTAL)
 {'='*70}
 
 Derived |V_CKM|:
-  ┌                                           ┐
-  │  {V_mag[0,0]:.5f}    {V_mag[0,1]:.5f}    {V_mag[0,2]:.5f}  │
-  │  {V_mag[1,0]:.5f}    {V_mag[1,1]:.5f}    {V_mag[1,2]:.5f}  │
-  │  {V_mag[2,0]:.5f}    {V_mag[2,1]:.5f}    {V_mag[2,2]:.5f}  │
-  └                                           ┘
+  [  {V_mag[0,0]:.5f}    {V_mag[0,1]:.5f}    {V_mag[0,2]:.5f}  ]
+  [  {V_mag[1,0]:.5f}    {V_mag[1,1]:.5f}    {V_mag[1,2]:.5f}  ]
+  [  {V_mag[2,0]:.5f}    {V_mag[2,1]:.5f}    {V_mag[2,2]:.5f}  ]
 
 Experimental |V_CKM|:
-  ┌                                           ┐
-  │  {V_exp[0,0]:.5f}    {V_exp[0,1]:.5f}    {V_exp[0,2]:.5f}  │
-  │  {V_exp[1,0]:.5f}    {V_exp[1,1]:.5f}    {V_exp[1,2]:.5f}  │
-  │  {V_exp[2,0]:.5f}    {V_exp[2,1]:.5f}    {V_exp[2,2]:.5f}  │
-  └                                           ┘
+  [  {V_exp[0,0]:.5f}    {V_exp[0,1]:.5f}    {V_exp[0,2]:.5f}  ]
+  [  {V_exp[1,0]:.5f}    {V_exp[1,1]:.5f}    {V_exp[1,2]:.5f}  ]
+  [  {V_exp[2,0]:.5f}    {V_exp[2,1]:.5f}    {V_exp[2,2]:.5f}  ]
 """)
         
         # Element-wise comparison
@@ -181,7 +175,7 @@ Experimental |V_CKM|:
                 err_str = f"{err:.1f}%"
             else:
                 err = abs(derived - exp) * 1000
-                err_str = f"{err:.2f}‰"
+                err_str = f"{err:.2f}permil"
             total_sq_err += (derived - exp)**2
             print(f"  {name:<8} {derived:<12.5f} {exp:<12.5f} {err_str:<10}")
         
@@ -197,10 +191,10 @@ Experimental |V_CKM|:
 CP VIOLATION (JARLSKOG INVARIANT)
 {'='*70}
 
-  J = A² λ⁶ η = {A:.4f}² × {lam:.4f}⁶ × {eta:.4f}
+  J = A^2 * lambda^6 * eta = {A:.4f}^2 x {lam:.4f}^6 x {eta:.4f}
     = {J:.2e}
     
-  Experimental: J = (3.00 ± 0.15) × 10⁻⁵
+  Experimental: J = (3.00 +/- 0.15) x 10^-5
   
   Error: {abs(J - J_exp)/J_exp * 100:.1f}%
 """)
@@ -215,7 +209,7 @@ UNITARITY TRIANGLE
   
     β = arg(-V_cd V_cb* / V_td V_tb*) 
     γ = arg(-V_ud V_ub* / V_cd V_cb*)
-    α = π - β - γ
+    alpha = pi - beta - gamma
 """)
         
         # Calculate angles
@@ -230,22 +224,22 @@ UNITARITY TRIANGLE
         gamma = np.angle(-Vud * np.conj(Vub) / (Vcd * np.conj(Vcb)))
         alpha = np.pi - beta - gamma
         
-        print(f"    β = {np.degrees(beta):.1f}°  (Expt: 22.2°, Error: {abs(np.degrees(beta)-22.2):.1f}°)")
-        print(f"    γ = {np.degrees(gamma):.1f}°  (Expt: 73°, Error: {abs(np.degrees(gamma)-73):.1f}°)")
-        print(f"    α = {np.degrees(alpha):.1f}°  (Expt: 85°, Error: {abs(np.degrees(alpha)-85):.1f}°)")
+        print(f"    beta = {np.degrees(beta):.1f} deg  (Expt: 22.2 deg, Error: {abs(np.degrees(beta)-22.2):.1f} deg)")
+        print(f"    gamma = {np.degrees(gamma):.1f} deg  (Expt: 73 deg, Error: {abs(np.degrees(gamma)-73):.1f} deg)")
+        print(f"    alpha = {np.degrees(alpha):.1f} deg  (Expt: 85 deg, Error: {abs(np.degrees(alpha)-85):.1f} deg)")
         
         print(f"""
 {'='*70}
 SUMMARY: CKM FROM GOLDEN RATIO GEOMETRY
 {'='*70}
 
-  ✓ Cabibbo angle λ = φ⁻³                     [4.2% error]
-  ✓ 2-3 mixing A = 1/√φ                       [0.5% error]
-  ✓ CP real part ρ = 1/(2π)                   [0.1% error]
-  ✓ CP imaginary part η = tan(½arcsin(φ⁻¹))   [0.6% error]
+  [OK] Cabibbo angle lambda = phi^-3              [4.2% error]
+  [OK] 2-3 mixing A = 1/sqrt(phi)                 [0.5% error]
+  [OK] CP real part rho = 1/(2*pi)                [0.1% error]
+  [OK] CP imaginary part eta = tan(arcsin(phi^-1)/2) [0.6% error]
   
   The entire CKM matrix emerges from the golden ratio geometry
-  of the E8→H4 quasicrystal projection.
+  of the E8->H4 quasicrystal projection.
   
   NO FREE PARAMETERS. Pure geometry.
 
