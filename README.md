@@ -579,4 +579,17 @@ tan²θ_W = φ/3 = 0.5393 (bare at E8 scale) → RGE runs to sin²θ_W = 0.231 a
 
 ---
 
+## 🛡️ Addressing Common Objections
+
+| Objection | Response |
+|-----------|----------|
+| "Weinberg angle doesn't match" | Bare value 0.35 runs to 0.23 via standard RGE (Appendix D) |
+| "Which roots are which particles?" | Explicit table: 112 bosons, 64 SM fermions, 64 mirrors (Appendix E) |
+| "How is this different from Lisi?" | Projection framework, explicit mirror mass mechanism, quantitative predictions (Appendix F) |
+| "Mirror fermions break chirality" | H4 locking gives M_mirror ~ 10²⁰ GeV, completely decoupled (Appendix C) |
+
+*Full technical appendices in PERFECT_PAPER.md*
+
+---
+
 *"The Universe is a path integral over the E8 Lie algebra. All physics emerges from one 4×8 matrix."*
