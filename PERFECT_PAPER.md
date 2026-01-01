@@ -269,7 +269,7 @@ g_rr = (1 + 2GM/r)
 
 ### 5.4 Emergence of Full General Relativity
 
-We have numerically demonstrated that the lattice strain reproduces the weak-field Newtonian potential h(r) = -GM/r with R² = 0.9999. By Feynman's consistency argument (1963), any Lorentz-invariant theory of a massless spin-2 field (the graviton) that couples to energy-momentum must interact with itself, uniquely leading to the full non-linear Einstein Field Equations:
+I have numerically demonstrated that the lattice strain reproduces the weak-field Newtonian potential h(r) = -GM/r with R² = 0.9999. By Feynman's consistency argument (1963), any Lorentz-invariant theory of a massless spin-2 field (the graviton) that couples to energy-momentum must interact with itself, uniquely leading to the full non-linear Einstein Field Equations:
 
 ```
 G_μν = 8πG T_μν
@@ -601,7 +601,7 @@ Distler and Garibaldi (2010) proved a fundamental theorem about E8:
 2. **Any embedding of SM fermions necessarily includes mirror fermions**
 3. **You cannot get even ONE generation without mirrors**
 
-This is mathematically correct. We cannot argue against it. Instead, we must explain why **mirrors are unobservable**.
+This is mathematically correct. I do not dispute it. Instead, I must explain why **mirrors are unobservable**.
 
 ### C.2 The H4 Locking Mass Mechanism
 
@@ -689,7 +689,7 @@ SM FERMIONS                           MIRROR FERMIONS
 
 ### C.7 Comparison to Standard Approaches
 
-The mirror fermion problem affects ALL E8-based theories. Our resolution is unique:
+The mirror fermion problem affects ALL E8-based theories. My resolution is unique:
 
 | Approach | Method | Problem |
 |----------|--------|---------|
@@ -758,11 +758,11 @@ The light states **are** the Standard Model fermions to **38 decimal places**. T
 
 ### C.11 Response to Distler-Garibaldi
 
-| Their Claim | Our Response |
+| Their Claim | My Response |
 |-------------|--------------|
 | "E8 has mirrors" | ✓ Correct |
 | "Mirrors make theory non-chiral" | ✗ At low energy, only SM propagates |
-| "You can't remove mirrors" | ✓ We don't remove them—we make them heavy |
+| "You can't remove mirrors" | ✓ I don't remove them—I make them heavy |
 
 **The correction to precision electroweak observables is δρ ~ 10⁻⁷⁴**, which is **71 orders of magnitude** below experimental precision. 
 
