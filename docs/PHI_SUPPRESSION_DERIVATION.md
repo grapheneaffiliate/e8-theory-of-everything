@@ -166,7 +166,74 @@ The φ⁻¹² suppression is **NOT** a numerical coincidence. It is a **geometri
 
 ---
 
-## Appendix: Detailed Orthoscheme Derivation
+## Appendix: General Orthoscheme Volume Formula
+
+### Derivation of V = (1/n!) e₁e₂...eₙ
+
+The **characteristic orthoscheme** of a regular polytope is an n-simplex with n mutually perpendicular edges e₁, e₂, ..., eₙ. The general volume formula is:
+
+```
+Vₙ = (1/n!) × e₁ × e₂ × ... × eₙ
+```
+
+### Base Cases
+
+**2D (right-angled triangle):**
+```
+V₂ = (1/2!) e₁e₂ = (1/2) e₁e₂
+```
+
+**3D (orthotetrahedron):**
+```
+V₃ = (1/3!) e₁e₂e₃ = (1/6) e₁e₂e₃
+```
+
+### General n-Dimensional Derivation
+
+For an n-simplex with vertices v₀, v₁, ..., vₙ:
+```
+Vₙ = (1/n!) |det(M)|
+```
+
+where M is the n×n matrix with columns (vᵢ - v₀).
+
+**For the orthogonal orthoscheme**, place vertices at:
+- v₀ = (0, 0, ..., 0)
+- v₁ = (e₁, 0, ..., 0)
+- v₂ = (e₁, e₂, 0, ..., 0)
+- ...
+- vₙ = (e₁, e₂, ..., eₙ)
+
+The matrix M is upper-triangular:
+```
+M = | e₁  e₁  ...  e₁ |
+    | 0   e₂  ...  e₂ |
+    | :    :   ⋱   :  |
+    | 0   0   ...  eₙ |
+```
+
+**Determinant of upper-triangular matrix = product of diagonal entries:**
+```
+det(M) = e₁ × e₂ × ... × eₙ
+```
+
+**Therefore:**
+```
+Vₙ = (1/n!) × e₁ × e₂ × ... × eₙ
+```
+
+### Application to 4D Polytopes
+
+For 4-orthoschemes (fundamental domains of regular 4-polytopes):
+```
+V₄ = (1/24) × e₁ × e₂ × e₃ × e₄
+```
+
+This is the formula used throughout this document for 600-cell, 120-cell, and 24-cell orthoschemes.
+
+---
+
+## Appendix A: 600-Cell Detailed Orthoscheme Derivation
 
 ### The Characteristic Orthoscheme (Goursat Tetrahedron)
 
