@@ -10,7 +10,7 @@ Figures:
 4. Figure 4: Quasicrystal Diffraction Pattern (10-fold symmetry)
 5. Figure 5: Gravity h(r) = -GM/r fit
 
-Author: Timothy McGirl / E8 Theory Team
+Author: Timothy McGirl
 Date: December 31, 2025
 """
 

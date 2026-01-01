@@ -1,6 +1,6 @@
 # The Geometric Standard Model: Emergent Gravity and Particle Physics from E8 Quasicrystals
 
-**Authors:** Timothy McGirl et al.  
+**Author:** Timothy McGirl  
 **Date:** December 31, 2025  
 **Repository:** https://github.com/grapheneaffiliate/e8-theory-of-everything
 
@@ -8,9 +8,9 @@
 
 ## Abstract
 
-We present a complete Theory of Everything based on a single geometric principle: the projection of the E8 Lie algebra onto the H4 quasicrystal. Using only one 4×8 orthogonal matrix—the **Elser-Sloane projection**—we derive the entire Standard Model of particle physics, the fine structure constant, and General Relativity from pure geometry, with no free parameters.
+I present a complete Theory of Everything based on a single geometric principle: the projection of the E8 Lie algebra onto the H4 quasicrystal. Using only one 4×8 orthogonal matrix—the **Elser-Sloane projection**—I derive the entire Standard Model of particle physics, the fine structure constant, and General Relativity from pure geometry, with no free parameters.
 
-Our computational framework produces the following testable results:
+This computational framework produces the following testable results:
 
 1. **Particle Content:** The 240 roots of E8 project to 112 bosonic and 128 fermionic states, naturally organizing into 3 generations of matter with mass ratios governed by the golden ratio φ = 1.618...
 
@@ -18,9 +18,9 @@ Our computational framework produces the following testable results:
 
 3. **Gauge Forces:** The massless photon naturally arises from rotational perturbations of the projection matrix P(x), traveling at exactly c. The Higgs field emerges from amplitude perturbations, acquiring mass through spontaneous symmetry breaking.
 
-4. **Gravity:** Newtonian gravity emerges as elastic strain of the quasicrystal vacuum. We demonstrate numerically that a point mass induces a metric perturbation h(r) = -GM/r with R² = 0.9999 fit quality, recovering the weak-field Schwarzschild metric.
+4. **Gravity:** Newtonian gravity emerges as elastic strain of the quasicrystal vacuum. I demonstrate numerically that a point mass induces a metric perturbation h(r) = -GM/r with R² = 0.9999 fit quality, recovering the weak-field Schwarzschild metric.
 
-The statistical significance of these results is p = 7.02 × 10⁻¹² (6.9σ), exceeding the 5σ discovery threshold. We propose that the E8→H4 projection constitutes the fundamental mathematical structure underlying physical reality.
+The statistical significance of these results is p = 7.02 × 10⁻¹² (6.9σ), exceeding the 5σ discovery threshold. I propose that the E8→H4 projection constitutes the fundamental mathematical structure underlying physical reality.
 
 **Keywords:** E8 Lie algebra, quasicrystals, theory of everything, emergent gravity, standard model, golden ratio
 
@@ -40,7 +40,7 @@ The key obstacles include:
 
 ### 1.2 The E8 Proposal
 
-We propose that all of physics—matter, forces, and gravity—emerges from a single mathematical structure: the projection of the E8 Lie algebra onto the 4-dimensional H4 quasicrystal.
+I propose that all of physics—matter, forces, and gravity—emerges from a single mathematical structure: the projection of the E8 Lie algebra onto the 4-dimensional H4 quasicrystal.
 
 The E8 Lie algebra is the largest exceptional simple Lie algebra, with:
 - 248 dimensions
@@ -52,7 +52,7 @@ The **Elser-Sloane projection** maps E8 to the H4 quasicrystal—a non-periodic 
 
 ### 1.3 Key Insight: The Universe as a Field Theory on E8
 
-Our central thesis is that the Universe is described by a **dynamical field theory** where the projection matrix P(x,t) becomes a field:
+My central thesis is that the Universe is described by a **dynamical field theory** where the projection matrix P(x,t) becomes a field:
 
 ```
 L = ½(∂P/∂t)² - ½|∇P|² - λ(PP^T - I₄)² + Tr(P·R·R^T·P^T)
@@ -101,7 +101,7 @@ The E8 Lie algebra has 240 root vectors in ℝ⁸, organized as:
 - **112 integer roots:** All permutations of (±1, ±1, 0, 0, 0, 0, 0, 0)
 - **128 half-integer roots:** (±½, ±½, ±½, ±½, ±½, ±½, ±½, ±½) with even sign changes
 
-These roots encode the complete particle content of our theory.
+These roots encode the complete particle content of this theory.
 
 ### 2.2 The Elser-Sloane Projection
 
@@ -133,7 +133,7 @@ This ensures the projection preserves angles everywhere, creating an "icosahedra
 
 ### 3.1 Root Lengths as Masses
 
-In our framework, particle mass is determined by the projected root length:
+In this framework, particle mass is determined by the projected root length:
 
 ```
 m_particle ∝ |P·r|
@@ -162,7 +162,7 @@ The ratio between adjacent mass families follows the golden ratio:
 m_(n+1) / m_n ≈ φ = 1.618...
 ```
 
-Our numerical analysis gives φ_fitted = 1.5954, within 1.5% of the true golden ratio. This explains why particle masses follow quasi-geometric progressions.
+The numerical analysis gives φ_fitted = 1.5954, within 1.5% of the true golden ratio. This explains why particle masses follow quasi-geometric progressions.
 
 ---
 
@@ -210,7 +210,7 @@ This is the **Higgs field**—a massive scalar traveling at v < c.
 
 ### 5.1 Mass as Lattice Defect
 
-In our framework, a "mass" is a localized distortion of the projection field P(x). This creates a "knot" or "defect" that the surrounding quasicrystal must accommodate.
+In this framework, a "mass" is a localized distortion of the projection field P(x). This creates a "knot" or "defect" that the surrounding quasicrystal must accommodate.
 
 ### 5.2 Gravity as Elastic Strain
 
@@ -224,7 +224,7 @@ where h_μν is the metric perturbation induced by the strain.
 
 ### 5.3 Numerical Verification
 
-We solve Poisson's equation ∇²h = 4πGρ for a point mass and extract the radial profile h(r).
+Solving Poisson's equation ∇²h = 4πGρ for a point mass and extract the radial profile h(r).
 
 **Result:**
 ```
@@ -247,7 +247,7 @@ g_rr = (1 + 2GM/r)
 
 ### 6.1 The Golden Angle Connection
 
-The fine structure constant α = 1/137.036 has no known derivation in the Standard Model. We propose:
+The fine structure constant α = 1/137.036 has no known derivation in the Standard Model. I propose:
 
 ```
 α = φ²/360 = 2.618.../360 = 1/137.508
@@ -292,7 +292,7 @@ The golden angle is the optimal angle for packing objects without crystalline or
 
 ## 8. Conclusion
 
-We have demonstrated that the projection of the E8 Lie algebra onto the H4 quasicrystal constitutes a complete Theory of Everything—unifying:
+I have demonstrated that the projection of the E8 Lie algebra onto the H4 quasicrystal constitutes a complete Theory of Everything—unifying:
 
 1. **The Standard Model:** 48 fermions in 3 generations, 12 gauge bosons
 2. **Coupling Constants:** α = 1/137.51, sin²θ_W = 0.23151
@@ -300,9 +300,9 @@ We have demonstrated that the projection of the E8 Lie algebra onto the H4 quasi
 4. **Electromagnetism:** Photon from rotational perturbations of P(x)
 5. **General Relativity:** Gravity from elastic strain of the quasicrystal
 
-The statistical significance of our results (p = 7.02 × 10⁻¹² = 6.9σ) exceeds the discovery threshold. The probability that all these matches are coincidental is less than 1 in 142 billion.
+The statistical significance of these results (p = 7.02 × 10⁻¹² = 6.9σ) exceeds the discovery threshold. The probability that all these matches are coincidental is less than 1 in 142 billion.
 
-We propose that the E8→H4 projection represents the fundamental mathematical structure of physical reality: **Nature is E8**.
+I propose that the E8→H4 projection represents the fundamental mathematical structure of physical reality: **Nature is E8**.
 
 ---
 
