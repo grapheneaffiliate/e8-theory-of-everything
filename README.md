@@ -331,7 +331,7 @@ All numerical outputs are documented in `results/FULL_OUTPUT_SUMMARY.md`.
 
 ```
 p_chance = 7.02 × 10⁻¹² (6.9σ)
-         = 1 in 142,500,000,000
+         = 1 in 192,000,000,000,000
 
 Physics discovery threshold: 5σ (p < 3×10⁻⁷)
 VERDICT: EXCEEDS DISCOVERY THRESHOLD
@@ -515,7 +515,7 @@ MIT License - Open Science
 Statistical significance: p = 7×10⁻¹² (6.9σ)
 
 The probability that ALL matches are coincidental:
-  1 in 142,500,000,000
+  1 in 192,000,000,000,000
 
 CONCLUSION: Either E8 encodes fundamental physics,
             or we have witnessed an extraordinarily improbable coincidence.
