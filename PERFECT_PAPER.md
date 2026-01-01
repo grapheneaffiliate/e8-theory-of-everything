@@ -55,24 +55,31 @@ The **Elser-Sloane projection** maps E8 to the H4 quasicrystal—a non-periodic 
 My central thesis is that the Universe is described by a **path integral** over all E8 root projections:
 
 ```
-                    1
-    Z[Universe] =  ———  Σ      exp(− ∫ 𝓛[P(x)·r] d⁴x / ℏ)
-                  √240  r∈E₈
+               1
+Z[Universe] = ────  ∑      exp⎛ − ∫ ( 𝓛[P(x)·r] / ℏ ) d⁴x ⎞
+              √240   r ∈ E8   ⎝                           ⎠
 
-LAGRANGIAN DENSITY:
-    𝓛[P·r] = ½‖∂_μ(P·r)‖² + λ‖P·r‖⁴ − μ Σ|cos θᵢⱼ − 1/√5|
-             ├────────────┤   ├───────┤   ├─────────────────┤
-               Kinetic        Quartic     Icosahedral Lock
+WHERE:
+    P(x)  Dynamical 4×8 projection field (The Universe Matrix)
+    r     The 240 root vectors of the E8 lattice
+    ℏ     Reduced Planck constant
+
+THE GEOMETRIC LAGRANGIAN DENSITY (𝓛):
+
+    𝓛[P·r] = ½║∂(P·r)║²  +  λ║P·r║⁴  -  μ ∑   |cos(θ_ij) - 1/√5|
+             └────┬───┘     └──┬──┘       └─────────┬──────────┘
+               Kinetic       Higgs            H4 Locking
+             (Graviton)    (Mass)          (Standard Model)
 
 OBSERVABLES:
     ⟨𝒪⟩ = (1/Z) Σᵣ 𝒪(P·r) exp(−S/ℏ)
 ```
 
 Where:
-- P(x) ∈ ℝ⁴ˣ⁸: The dynamical UNIVERSE_MATRIX field (P·Pᵀ = I₄)
-- r ∈ E₈: The 240 root vectors (‖r‖² = 2)
-- λ: Quartic coupling (generates Higgs mechanism)
-- μ: Icosahedral locking strength (cos θ = ±1/√5 → golden angle)
+- P(x): The dynamical UNIVERSE_MATRIX field (P·Pᵀ = I₄)
+- r: The 240 root vectors of E8 (║r║² = 2)
+- λ: Higgs coupling (generates mass mechanism)
+- μ: H4 locking strength (cos θ = ±1/√5 → Standard Model)
 - ℏ: Reduced Planck constant
 - 1/√240: Canonical normalization
 
