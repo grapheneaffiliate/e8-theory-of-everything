@@ -256,21 +256,23 @@ This φ suppression in the volume element directly supports the φ⁻³ per dime
 
 For comparison, we derive the 24-cell orthoscheme volume to show that φ suppression is **unique to H4**.
 
-The 24-cell (Schläfli symbol {3,4,3}) has F₄ symmetry (order 1152). Its orthogonal edge lengths for a=1 (R=1):
+The 24-cell (Schläfli symbol {3,4,3}) has F₄ symmetry (order 1152). Its orthogonal edge lengths for edge a=1:
 
 | Edge | Formula | Value |
 |------|---------|-------|
-| e₁ (center → cell) | √(1/2) | ≈ 0.707 |
-| e₂ (cell → face) | √(1/6) | ≈ 0.408 |
-| e₃ (face → edge) | √(1/12) | ≈ 0.289 |
-| e₄ (edge → vertex) | √(1/4) | = 0.500 |
+| e₁ (center → cell) | 1/2 | = 0.500 |
+| e₂ (cell → face) | 1/(2√3) | ≈ 0.289 |
+| e₃ (face → edge) | 1/(2√6) | ≈ 0.204 |
+| e₄ (edge → vertex) | 1/(2√2) | ≈ 0.354 |
 
 ### Product Computation
 
 ```
-e₁e₂e₃e₄ = √(1/2) × √(1/6) × √(1/12) × √(1/4)
-         = √(1/576)
-         = 1/24
+e₁e₂e₃e₄ = (1/2) × (1/2√3) × (1/2√6) × (1/2√2)
+         = 1 / (8 × √(3×6×2))
+         = 1 / (8 × √36)
+         = 1 / (8 × 6)
+         = 1/48
 ```
 
 **Note: ALL RATIONAL - No φ factors!**
@@ -278,16 +280,22 @@ e₁e₂e₃e₄ = √(1/2) × √(1/6) × √(1/12) × √(1/4)
 ### 24-Cell Orthoscheme Volume
 
 ```
-V_orthoscheme = (1/24) × (1/24) = 1/576
+V_orthoscheme = (1/24) × (1/48) = 1/1152
 ```
 
 ### Full 24-Cell Hypervolume
 
 ```
-V_24-cell = 1152 × (1/576) = 2
+V_24-cell = 1152 × (1/1152) = 1   (for edge a=1)
 ```
 
-This is the exact integer hypervolume for the 24-cell.
+For circumradius R=1 (edge a=√2), scale by (√2)⁴=4:
+
+```
+V_24-cell(R=1) = 4
+```
+
+This is the standard integer hypervolume for the 24-cell.
 
 ---
 
