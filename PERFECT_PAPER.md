@@ -81,7 +81,7 @@ OBSERVABLES:
 
 **Mathematical Foundations:**
 
-1. **Stiefel Manifold V₄(ℝ⁸):** The constraint P·Pᵀ = I₄ defines the manifold of orthonormal 4-frames in ℝ⁸. This is NOT the Grassmannian Gr(4,8)—the Grassmannian quotients out rotations, which would delete electromagnetism. The Stiefel manifold preserves all 32 degrees of freedom needed for gauge fields.
+1. **Stiefel Manifold V₄(ℝ⁸):** The constraint P·Pᵀ = I₄ defines the manifold of orthonormal 4-frames in ℝ⁸. This is NOT the Grassmannian Gr(4,8)—the Grassmannian quotients out rotations, which would delete electromagnetism. The Stiefel manifold preserves 22 DOF = 12 SM gauge + 2 graviton + 8 heavy coset.
 
 2. **Wilson Action Connection:** The locking term μ = g⁻² = 1/α is mathematically identical to the Wilson Action in lattice gauge theory. The "stiffness" of the quasicrystal geometry IS the inverse coupling constant of the gauge field.
 
