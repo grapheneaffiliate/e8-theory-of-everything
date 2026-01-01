@@ -11,7 +11,7 @@
 
 ## 🔥 NEW in v2.0: Complete Dynamical Field Theory 🔥
 
-We have now **simulated** the full dynamics of the E8→H4 quasicrystal vacuum, deriving:
+I have now **simulated** the full dynamics of the E8→H4 quasicrystal vacuum, deriving:
 
 | Discovery | Result | Accuracy |
 |:----------|:-------|:--------:|
