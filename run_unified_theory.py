@@ -74,10 +74,10 @@ MODULES = [
     ("modules/p_chance_calculation.py", "Statistical Significance", "p = 7×10⁻¹² (6.9σ)"),
 ]
 
-# Physics submodules (v1.0)
+# Physics submodules (v2.1 - geometric flavor derivation)
 PHYSICS_MODULES = [
-    ("physics/neutrino_sector.py", "Neutrino Sector", "Type-I see-saw, PMNS matrix"),
-    ("physics/ckm_matrix.py", "CKM Matrix", "Wolfenstein parameters"),
+    ("physics/pmns_matrix_geometric.py", "PMNS Matrix (Geometric)", "All angles from φ, ~2% error"),
+    ("physics/ckm_matrix_geometric.py", "CKM Matrix (Geometric)", "All Wolfenstein from φ, ~1% error"),
 ]
 
 # v2.0: Dynamical Field Theory modules
