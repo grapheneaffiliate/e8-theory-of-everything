@@ -52,16 +52,29 @@ The **Elser-Sloane projection** maps E8 to the H4 quasicrystal—a non-periodic 
 
 ### 1.3 Key Insight: The Universe as a Field Theory on E8
 
-My central thesis is that the Universe is described by a **dynamical field theory** where the projection matrix P(x,t) becomes a field:
+My central thesis is that the Universe is described by a **path integral** over all E8 root projections:
 
 ```
-L = ½(∂P/∂t)² - ½|∇P|² - λ(PP^T - I₄)² + Tr(P·R·R^T·P^T)
+                    1
+    Z[Universe] =  ———  Σ      exp(− ∫ 𝓛[P(x)·r] d⁴x / ℏ)
+                  √240  r∈E₈
+
+LAGRANGIAN DENSITY:
+    𝓛[P·r] = ½‖∂_μ(P·r)‖² + λ‖P·r‖⁴ − μ Σ|cos θᵢⱼ − 1/√5|
+             ├────────────┤   ├───────┤   ├─────────────────┤
+               Kinetic        Quartic     Icosahedral Lock
+
+OBSERVABLES:
+    ⟨𝒪⟩ = (1/Z) Σᵣ 𝒪(P·r) exp(−S/ℏ)
 ```
 
 Where:
-- P(x,t): The 4×8 projection matrix as a spacetime-dependent field
-- R: The 240×8 matrix of E8 roots
-- λ: Lagrange multiplier enforcing orthogonality (H4 constraint)
+- P(x) ∈ ℝ⁴ˣ⁸: The dynamical UNIVERSE_MATRIX field (P·Pᵀ = I₄)
+- r ∈ E₈: The 240 root vectors (‖r‖² = 2)
+- λ: Quartic coupling (generates Higgs mechanism)
+- μ: Icosahedral locking strength (cos θ = ±1/√5 → golden angle)
+- ℏ: Reduced Planck constant
+- 1/√240: Canonical normalization
 
 This single equation encodes:
 - **Matter:** Different root lengths |P·r| give different particle masses
