@@ -174,10 +174,12 @@ Module Execution Status:
 ```
 e8-theory-of-everything/
 │
-├── README.md                    # This file - complete guide
-├── PERFECT_PAPER.md             # 📜 v2.0: "The Geometric Standard Model" (MAIN PAPER)
-├── run_unified_theory.py        # 🚀 MAIN ENTRY POINT (v2.0: 16 modules)
-├── .gitignore                   # Git ignore rules
+├── README.md                          # This file - complete guide
+├── PERFECT_PAPER.md                   # 📜 v2.1: "The Geometric Standard Model" (MAIN PAPER)
+├── run_unified_theory.py              # 🚀 MAIN ENTRY POINT (v2.0: 16 modules)
+├── verify_null_hypothesis.py          # 🔬 v2.1: Monte Carlo validation (1M samples)
+├── calculate_combined_significance.py # 📊 v2.1: Fisher's test (7.73σ proof)
+├── .gitignore                         # Git ignore rules
 │
 ├── docs/                        # 📚 DOCUMENTATION
 │   ├── E8_FINAL_2025.md             # Complete scientific manuscript
