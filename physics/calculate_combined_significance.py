@@ -18,8 +18,8 @@ from scipy import stats
 # Our independent experimental matches
 predictions = {
     'Monte Carlo uniqueness': {
-        'p_value': 1e-5,  # From verify_null_hypothesis.py (100K samples)
-        'description': 'E8→H4 unique among random projections'
+        'p_value': 1e-6,  # From verify_null_hypothesis.py (1M samples)
+        'description': 'E8→H4 unique among 1M random projections'
     },
     'Fine structure constant': {
         'error_percent': 0.3,  # |α_theory - α_exp| / α_exp
