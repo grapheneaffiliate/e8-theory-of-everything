@@ -47,7 +47,7 @@ THE GEOMETRIC LAGRANGIAN DENSITY (𝓛):
             cos θ_H4 = 1/√5     (Icosahedral dihedral angle)
 
 MATHEMATICAL PRECISION:
-    • Stiefel V₄(ℝ⁸) preserves 32 DOF for gauge fields
+    • Stiefel V₄(ℝ⁸) preserves 22 DOF = 12 SM gauge + 2 graviton + 8 heavy coset
     • Grassmannian would DELETE electromagnetism (quotients rotations)
     • Wilson locking: μ = g⁻² = 1/α (lattice gauge theory)
 
