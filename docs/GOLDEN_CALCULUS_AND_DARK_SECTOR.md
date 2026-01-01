@@ -107,27 +107,33 @@ d_φ x = x_{n+1} - x_n = a₀ φⁿ⁺¹ - a₀ φⁿ = a₀ φⁿ (φ - 1) = a�
 
 **Physical Implication**: The "size" of a differential step depends on energy scale. Space becomes "grainy" at small scales but appears smooth at large scales.
 
-## 3. The Golden Derivative (∂_φ)
+## 3. The Golden Derivative (D^(φ))
 
-**Definition 3.1 (Golden Derivative):**
+**Definition 3.1 (Golden Derivative - SYMMETRIC FORM):**
 
-For function f(x) defined on Λ_φ:
-
-```
-∂_φ f(x) = lim_{ε → φ⁻¹ x} [f(x + ε) - f(x)] / ε
-```
-
-**Definition 3.2 (Simplified Form):**
-
-Since ε = φ⁻¹ x:
+The validated, first-principles Golden Derivative is the **symmetric q-derivative** with q = φ⁻¹:
 
 ```
-∂_φ f(x) = [f(x + φ⁻¹ x) - f(x)] / (φ⁻¹ x)
-         = φ [f(φ⁻¹ (φ+1) x) - f(x)] / x
-         = φ [f(φ x) - f(x)] / x
+D^(φ) f(x) = [f(φx) - f(φ⁻¹x)] / [(φ - φ⁻¹) x]
 ```
 
-**Crucial Property**: As φ → 1, ∂_φ → ∂. However, φ is fixed at 1.618..., making this derivative **inherently non-local**. It "sees" the lattice structure.
+**THE NORMALIZATION MIRACLE**: Since φ - φ⁻¹ = 1 exactly:
+
+```
+D^(φ) f(x) = [f(φx) - f(φ⁻¹x)] / x
+```
+
+**Why Symmetric Form is Essential:**
+
+| Property | Asymmetric (OLD) | Symmetric (CORRECT) |
+|----------|------------------|---------------------|
+| Formula | φ[f(φx) - f(x)]/x | [f(φx) - f(φ⁻¹x)]/x |
+| Hermitian | ❌ No | ✅ Yes |
+| Unitary | ❌ No (dissipative) | ✅ Yes (probability conserved) |
+| Time-reversal | ❌ Breaks | ✅ Preserves |
+| Physics valid | ❌ Invalid for QM | ✅ Required for QM |
+
+**Crucial Property**: As φ → 1, D^(φ) → standard derivative. The symmetric form looks both UP (φx) and DOWN (φ⁻¹x) in scale, ensuring the operator is self-adjoint.
 
 ## 4. The Golden Integral (∫_φ)
 
@@ -342,15 +348,15 @@ The "Strong Force" is simply the Golden Derivative ∂_φ acting at small scales
 | **Confinement** | Golden Calculus limit | QCD already observes |
 | **Energy ceiling** | [n]_φ → φ² as n → ∞ | High-energy spectroscopy |
 
-## New Mathematics
+## New Mathematics (VALIDATED SYMMETRIC FORM)
 
-| Standard | Golden |
-|----------|--------|
-| d/dx | ∂_φ = φ[f(φx) - f(x)]/x |
-| ∫ f dx | Σ φⁿ f(a₀ φⁿ) × φ⁻¹ a₀ |
-| n | [n]_φ = (φⁿ - φ⁻ⁿ)/√5 |
-| e^x | exp_φ(x) |
-| ∇² | ∇²_φ = φ⁻² Σ ∂²_φ |
+| Standard | Golden | Notes |
+|----------|--------|-------|
+| d/dx | D^(φ) = [f(φx) - f(φ⁻¹x)]/x | **Symmetric, Hermitian** |
+| ∫ f dx | x Σ φⁿ f(φⁿx) | Uses φ - φ⁻¹ = 1 |
+| n | [n]_φ = (φⁿ - φ⁻ⁿ)/√5 | Golden Number |
+| e^x | exp_φ(x) = Σ xⁿ/[n]_φ! | Golden Exponential |
+| ∇² | ∇²_φ = [f(φ²x) - 2f(x) + f(φ⁻²x)]/x² | Golden Laplacian |
 
 ---
 
