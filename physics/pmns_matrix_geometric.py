@@ -120,7 +120,7 @@ class PMNSGeometric:
 MIXING ANGLES - GEOMETRIC DERIVATION
 {'='*70}
 
-All parameters derived from golden ratio φ = {self.phi:.6f}:
+All parameters derived from golden ratio phi = {self.phi:.6f}:
 
   ANGLE     FORMULA                    DERIVED      EXPT       ERROR
   ---------------------------------------------------------------------
@@ -156,7 +156,7 @@ Physical Interpretation:
         
         print(f"""
 {'='*70}
-sin² FORM COMPARISON
+sin^2 FORM COMPARISON
 {'='*70}
 
   Parameter     Formula              Derived    Experiment    Error

@@ -100,7 +100,7 @@ class CKMGeometric:
 WOLFENSTEIN PARAMETERS - GEOMETRIC DERIVATION
 {'='*70}
 
-All parameters derived from golden ratio φ = {self.phi:.6f}:
+All parameters derived from golden ratio phi = {self.phi:.6f}:
 
   PARAMETER   FORMULA                VALUE      EXPT       ERROR
   -----------------------------------------------------------------
