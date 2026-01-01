@@ -255,8 +255,8 @@ def main():
     elif args.full:
         modules_to_run = MODULES + PHYSICS_MODULES + DYNAMICS_MODULES + PROOF_MODULES
     else:
-        # Standard mode: core modules + physics
-        modules_to_run = MODULES + PHYSICS_MODULES
+        # Standard mode: ALL 19 modules
+        modules_to_run = MODULES + PHYSICS_MODULES + DYNAMICS_MODULES + PROOF_MODULES
     
     # Handle single module mode
     all_modules = MODULES + PHYSICS_MODULES + DYNAMICS_MODULES + PROOF_MODULES
