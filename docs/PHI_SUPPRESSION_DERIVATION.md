@@ -365,29 +365,37 @@ V = (1/24) e₁ e₂ e₃ e₄
 
 The factor 1/n! arises from the simplex determinant in orthogonal coordinates.
 
-### Step C: Compute the Product
+### Step C: Compute the Product Symbolically
+
+Group φ terms and constants separately:
 
 ```
-e₁² = φ⁴/8
-e₂² = 1/(4φ²)
-e₃² = 1/(6φ²)
-e₄² = 1/(2φ²)
-
-e₁² e₂² e₃² e₄² = [φ⁴/8] × [1/(4φ²)] × [1/(6φ²)] × [1/(2φ²)]
-                 = φ⁴ / (8 × 4 × 6 × 2 × φ⁶)
-                 = 1 / (384 φ²)
-
-Therefore:
-e₁ e₂ e₃ e₄ = 1 / (φ × √384) = 1 / (φ × 8√6)
+e₁e₂e₃e₄ = (φ²/2√2) × (1/2φ) × (1/φ√6) × (1/φ√2)
 ```
 
-### Step D: Orthoscheme Volume
+**φ terms:**
+- Numerator: φ²
+- Denominator: φ × φ × φ = φ³
+- Net: φ²/φ³ = **φ⁻¹**
+
+**Constants:**
+- Numerator: 1
+- Denominator: (2√2) × (2) × (√6) × (√2) = 4 × √(2×6×2) = 4√24 = 8√6
+
+**Combined:**
+```
+e₁e₂e₃e₄ = φ⁻¹ × (1/8√6) = 1/(8φ√6)
+```
+
+### Step D: Orthoscheme Volume (Exact Symbolic)
 
 ```
-V_orthoscheme = (1/24) × 1/(φ × 8√6) = 1 / (192 φ √6)
+V_orthoscheme = (1/24) × 1/(8φ√6) = 1/(192φ√6)
 ```
 
-**The φ⁻¹ factor appears explicitly!**
+**The φ⁻¹ factor appears explicitly in the exact symbolic form!**
+
+This is the rigorous result: **V = 1/(192φ√6)** with φ⁻¹ emerging directly from the icosahedral symmetry.
 
 ### Step E: Full 600-Cell Hypervolume
 
