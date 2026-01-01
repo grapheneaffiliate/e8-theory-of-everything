@@ -120,46 +120,59 @@ The orthoscheme for the {3,5,3} Schläfli symbol (600-cell) has edges related to
 
 ## Step 4: Connection to Lattice Density
 
-In E8 → H4 projection, the 600-cell serves as the fundamental domain (Voronoi cell). The density ρ of lattice points is:
+In E8 → H4 projection (Elser-Sloane quasicrystal), the **600-cell is the Voronoi cell** in the 4D physical subspace.
 
+**Cell volume and density:**
 ```
-ρ ∝ 1/V ∝ φ³
+ΔV = V_600-cell ∝ φ⁻³
+ρ (lattice density) = 1/ΔV ∝ φ³
 ```
 
 For quasicrystal projections (cut-and-project method):
-- Type-I cross-sections: dense, ρ_I = φ³ × ρ_II  
-- Type-II cross-sections: sparse
+- Type-I sites: dense, ρ_I = φ³ × ρ_II  
+- Type-II sites: sparse
 
-The effective "window" volume in perpendicular space suppresses UV contributions from sparse modes.
-
----
-
-## Step 5: Loop Integral Suppression
-
-In lattice QFT, the loop integral I is discretized:
-
-```
-I ≈ Σ_k f(k) × ΔV
-```
-
-The suppression ratio I_lat/I_cont arises because:
-
-1. **Brillouin zone** has icosahedral structure
-2. **Effective measure** in quasiperiodic case: dμ ∝ φ⁻³ dk per dimension
-3. **4D integral:**
-
-```
-d⁴μ ∝ (φ⁻³)⁴ d⁴k = φ⁻¹² d⁴k
-```
+The φ³ density amplification in dense regions confirms the geometric scaling.
 
 ---
 
-## Step 6: Per-Dimension Interpretation
+## Step 5: Loop Integral Suppression in Lattice QFT
 
-The {3,5,3} Coxeter diagram has 3-fold branching (tetrahedral cells). Each spacetime dimension inherits this scaling:
+A 1-loop integral in continuum 4D QFT (e.g., vacuum bubble):
 
-- **Per dimension:** φ⁻³ suppression
-- **For d=4:** Total = (φ⁻³)⁴ = φ⁻¹²
+```
+I_cont = ∫ d⁴k/(2π)⁴ × 1/(k² + m²)   [UV divergent]
+```
+
+On the E8→H4 lattice (spacing a ∝ ρ⁻¹/⁴ ∝ φ⁻³/⁴):
+
+```
+I_lat ≈ Σ_k f(k) × Δ⁴k
+```
+
+**Suppression mechanism:**
+- Continuum measure: d⁴k
+- Lattice measure: sum over sites × (1/ρ) = sum × ΔV ∝ φ⁻³
+- The discrete measure suppresses relative to continuum
+
+**The suppression factor per integral = 1/ρ ∝ φ⁻³ per "effective dimension".**
+
+---
+
+## Step 6: Per-Dimension Interpretation → φ⁻¹²
+
+The φ⁻³ in V = hypervolume (4D) is interpreted as **φ⁻³ per dimension** (from 3-fold tetrahedral branching in {3,3,5} Schläfli symbol).
+
+For d=4 spacetime dimensions:
+```
+Suppression per dimension: φ⁻³
+Total for d⁴μ: (φ⁻³)^d = (φ⁻³)⁴ = φ⁻¹²
+```
+
+Thus:
+```
+I_lattice / I_continuum = φ⁻¹² for 1-loop
+```
 
 ---
 
