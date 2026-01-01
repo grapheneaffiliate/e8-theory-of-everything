@@ -207,8 +207,8 @@ UNITARITY TRIANGLE
 
   Angles (derived from geometry):
   
-    β = arg(-V_cd V_cb* / V_td V_tb*) 
-    γ = arg(-V_ud V_ub* / V_cd V_cb*)
+    beta = arg(-V_cd V_cb* / V_td V_tb*) 
+    gamma = arg(-V_ud V_ub* / V_cd V_cb*)
     alpha = pi - beta - gamma
 """)
         
