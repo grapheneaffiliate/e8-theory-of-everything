@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+
+######################################################################
+#                                                                    #
+  File "C:\Users\atchi\Desktop\e8-theory-of-everything\physics\e8_graviton_scattering.py", line 527, in <module>
+    lattice, result = run_graviton_scattering_verification()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\atchi\Desktop\e8-theory-of-everything\physics\e8_graviton_scattering.py", line 447, in run_graviton_scattering_verification
+    print("#" + "  GRAVITON-GRAVITON SCATTERING ON E8\u2192H4 DISCRETE LATTICE".center(68) + "#")
+  File "C:\Users\atchi\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 43: character maps to <undefined>

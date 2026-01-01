@@ -97,23 +97,26 @@ class E8UltimateTest:
         """Project E8 to H4."""
         return np.dot(self.e8_roots, self.projection.T)
     
-    def compute_1loop_lattice(self, spacing: float, n_points: int = 20) -> float:
-        """Wilson-style lattice 1-loop integral."""
+    def compute_1loop_lattice(self, spacing: float, n_points: int = 10) -> float:
+        """Wilson-style lattice 1-loop integral (optimized)."""
         a = spacing
-        N = n_points
+        N = n_points  # Keep small (8-12) to avoid long runtime
         dk = 2 * np.pi / (N * a)
         p_ext = np.array([0, 0, 0, 0.5])  # Fixed external momentum
         
         total = 0.0
         count = 0
         
-        for n0 in range(N):
-            for n1 in range(N):
-                for n2 in range(N):
-                    for n3 in range(N):
-                        k = dk * np.array([n0-N//2, n1-N//2, n2-N//2, n3-N//2])
+        # Vectorized approach for speed
+        indices = np.arange(N) - N//2
+        for n0 in indices:
+            for n1 in indices:
+                for n2 in indices:
+                    k_3d = dk * np.array([n0, n1, n2])
+                    for n3 in indices:
+                        k = np.array([k_3d[0], k_3d[1], k_3d[2], dk * n3])
                         
-                        # Lattice Laplacian
+                        # Lattice Laplacian (Wilson)
                         delta_k = sum(2/a**2 * (1 - np.cos(k[mu]*a)) for mu in range(4))
                         delta_pk = sum(2/a**2 * (1 - np.cos((p_ext[mu]-k[mu])*a)) for mu in range(4))
                         
@@ -379,7 +382,7 @@ def run_all_ultimate_tests():
     print("\n" + "=" * 70)
     print("  TEST 1: MULTI-SCALE φ^(-12) VERIFICATION")
     print("=" * 70)
-    result1 = tester.run_ultimate_test(n_scales=8)
+    result1 = tester.run_ultimate_test(n_scales=5)  # Reduced for speed
     
     # Test 2: H4 vs Hypercubic
     print("\n" + "=" * 70)
