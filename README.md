@@ -10,7 +10,7 @@
 
 ---
 
-## 🔥 NEW in v2.0: Complete Dynamical Field Theory 🔥
+## 🔥 NEW in v2.1: Complete Dynamical Field Theory 🔥
 
 I have now **simulated** the full dynamics of the E8→H4 quasicrystal vacuum, deriving:
 
@@ -68,7 +68,7 @@ PHYSICS EMERGES AS:
 
 ---
 
-## 🆕 Dynamical Physics Simulations (v2.0)
+## 🆕 Dynamical Physics Simulations (v2.1)
 
 Run any simulation from the `physics/` directory:
 
@@ -202,7 +202,7 @@ e8-theory-of-everything/
 │
 ├── README.md                          # This file - complete guide
 ├── PERFECT_PAPER.md                   # 📜 v2.1: "The Geometric Standard Model" (MAIN PAPER)
-├── run_unified_theory.py              # 🚀 MAIN ENTRY POINT (v2.0: 16 modules)
+├── run_unified_theory.py              # 🚀 MAIN ENTRY POINT (v2.1: 16 modules)
 ├── verify_null_hypothesis.py          # 🔬 v2.1: Monte Carlo validation (1M samples)
 ├── calculate_combined_significance.py # 📊 v2.1: Fisher's test (7.73σ proof)
 ├── .gitignore                         # Git ignore rules
@@ -230,7 +230,7 @@ e8-theory-of-everything/
 │   ├── e8_constants.py              # E8 root definitions & UNIVERSE_MATRIX
 │   ├── e8_unified_engine.py         # Main computational engine
 │   │
-│   │   # 🆕 v2.0 DYNAMICAL FIELD THEORY SIMULATIONS
+│   │   # 🆕 v2.1 DYNAMICAL FIELD THEORY SIMULATIONS
 │   ├── e8_dynamical_field_theory.py # Complete dynamical QFT engine
 │   ├── mass_spectrum_analysis.py    # 6 particle families, φ = 1.5954
 │   ├── physical_constants_derivation.py  # α = 1/137.51 from golden angle
