@@ -56,32 +56,38 @@ My central thesis is that the Universe is described by a **path integral** over 
 
 ```
                1
-Z[Universe] = ────  ∑      exp⎛ − ∫ ( 𝓛[P(x)·r] / ℏ ) d⁴x ⎞
-              √240   r ∈ E8   ⎝                           ⎠
+Z[Universe] = ────  ∫    [DP]  ∑      exp⎛ − ∫ ( 𝓛[P(x)·r] / ℏ ) d⁴x ⎞
+              √240        V₄   r ∈ E8    ⎝                           ⎠
 
 WHERE:
-    P(x)  Dynamical 4×8 projection field (The Universe Matrix)
-    r     The 240 root vectors of the E8 lattice
-    ℏ     Reduced Planck constant
+    P(x) ∈ V₄(ℝ⁸)    The Stiefel Manifold (4×8 orthonormal frames)
+    [DP]             Haar measure on V₄(ℝ⁸)
+    R = {240 roots}  The E8 root system
+    ℏ                Reduced Planck constant
 
 THE GEOMETRIC LAGRANGIAN DENSITY (𝓛):
 
-    𝓛[P·r] = ½║∂(P·r)║²  +  λ║P·r║⁴  -  μ ∑   |cos(θ_ij) - 1/√5|
-             └────┬───┘     └──┬──┘       └─────────┬──────────┘
-               Kinetic       Higgs            H4 Locking
-             (Graviton)    (Mass)          (Standard Model)
+    𝓛[P·r] = ½║∂_μ(P·r)║²  +  λ║P·r║⁴  -  g⁻² ∑   |cos(θ_ij) - cos θ_H4|
+             └─────┬────┘     └──┬──┘       └─────────────┬───────────┘
+                Kinetic        Higgs              H4 Locking
+              (Graviton)      (Mass)          (Gauge Structure)
+
+    where:  g⁻² = 1/α ≈ 137  (Wilson Action: μ = g⁻²)
+            cos θ_H4 = 1/√5 (dihedral) or (1+√5)/4 (edge)
 
 OBSERVABLES:
-    ⟨𝒪⟩ = (1/Z) Σᵣ 𝒪(P·r) exp(−S/ℏ)
+    ⟨𝒪⟩ = (1/Z) ∫[DP] Σᵣ 𝒪(P·r) exp(−S/ℏ)
 ```
 
-Where:
-- P(x): The dynamical UNIVERSE_MATRIX field (P·Pᵀ = I₄)
-- r: The 240 root vectors of E8 (║r║² = 2)
-- λ: Higgs coupling (generates mass mechanism)
-- μ: H4 locking strength (cos θ = ±1/√5 → Standard Model)
-- ℏ: Reduced Planck constant
-- 1/√240: Canonical normalization
+**Mathematical Foundations:**
+
+1. **Stiefel Manifold V₄(ℝ⁸):** The constraint P·Pᵀ = I₄ defines the manifold of orthonormal 4-frames in ℝ⁸. This is NOT the Grassmannian Gr(4,8)—the Grassmannian quotients out rotations, which would delete electromagnetism. The Stiefel manifold preserves all 32 degrees of freedom needed for gauge fields.
+
+2. **Wilson Action Connection:** The locking term μ = g⁻² = 1/α is mathematically identical to the Wilson Action in lattice gauge theory. The "stiffness" of the quasicrystal geometry IS the inverse coupling constant of the gauge field.
+
+3. **H4 Adjacency Options:**
+   - cos θ = 1/√5 ≈ 0.447 → Dodecahedral dihedral angle (face-to-face)
+   - cos θ = (1+√5)/4 ≈ 0.809 → 600-cell edge (vertex-to-vertex)
 
 This single equation encodes:
 - **Matter:** Different root lengths |P·r| give different particle masses
