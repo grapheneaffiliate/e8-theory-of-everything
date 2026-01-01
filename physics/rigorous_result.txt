@@ -1,0 +1,24 @@
+======================================================================
+Traceback (most recent call last):
+E8 UV SUPPRESSION - RIGOROUS FIRST-PRINCIPLES COMPUTATION
+======================================================================
+
+[Projections verified]
+  P_par @ P_par^T = I_4: True
+  P_perp @ P_perp^T = I_4: True
+
+======================================================================
+R = 2.5
+======================================================================
+
+[E8] Enumerating points with |x| <= 2.5...
+  E8 points: 9121
+  File "C:\Users\atchi\Desktop\e8-theory-of-everything\physics\e8_uv_suppression_rigorous.py", line 375, in <module>
+    results = run_rigorous_computation(R_values=[2.5, 3.0, 3.5, 4.0])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\atchi\Desktop\e8-theory-of-everything\physics\e8_uv_suppression_rigorous.py", line 272, in run_rigorous_computation
+    print(f"  \u03bc(K_max): {mu_e8[-1]:.0f}")
+  File "C:\Users\atchi\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u03bc' in position 2: character maps to <undefined>

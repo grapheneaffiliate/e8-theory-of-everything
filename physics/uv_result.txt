@@ -1,0 +1,48 @@
+======================================================================
+E8 UV SUPPRESSION - CORRECT FIRST-PRINCIPLES COMPUTATION
+======================================================================
+
+[Step 1] Verifying orthonormal projections...
+  P_par @ P_par^T = I_4: True
+  P_perp @ P_perp^T = I_4: True
+  P_par^T @ P_par + P_perp^T @ P_perp = I_8: True
+
+[Step 2] Generating E8 roots...
+  240 roots with |r|^2 = 2: OK
+
+[Step 3] Generating E8 lattice points for Fourier module...
+  Lattice points with |G| <= 3.0: 1057
+
+[Step 4] Computing mu_Lambda(K) for K = 0.5 to 3.5...
+    K = 0.5: mu_Lambda = 41
+    K = 1.0: mu_Lambda = 253
+    K = 1.5: mu_Lambda = 603
+    K = 2.0: mu_Lambda = 929
+    K = 2.5: mu_Lambda = 1029
+    K = 3.0: mu_Lambda = 1057
+    K = 3.5: mu_Lambda = 1057
+
+[Step 5] Fitting mu_Lambda(K) = A * K^4...
+  A = 9.7966 +/- 2.9577
+  Fitted power: 0.90 (expected: 4.0)
+
+[Step 6] Computing reference coefficient...
+  A_ref (Z^8 -> 4D) = pi^2/2 = 4.9348
+
+[Step 7] Computing suppression constant S = A / A_ref...
+  S = 1.985210
+  phi^(-3) = 0.236068
+  phi^(-12) = 3.105620e-03
+  S / phi^(-3) = 8.4095
+  S / phi^(-12) = 639.23
+
+======================================================================
+VERDICT
+======================================================================
+
+  S = 1.9852 does not match phi^(-3) or phi^(-12)
+
+  NOTE: This uses uniform weight w(G)=1.
+  Full computation requires Fourier weight |chi_hat_W(P_perp G)|^2.
+
+======================================================================

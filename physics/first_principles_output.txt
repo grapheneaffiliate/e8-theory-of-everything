@@ -1,0 +1,18 @@
+======================================================================
+Traceback (most recent call last):
+E8 FIRST-PRINCIPLES UV SUPPRESSION PROOF
+======================================================================
+
+[Step 1] Verifying Elser-Sloane projections...
+  Warning: P_par Gram matrix deviates from I_4
+  Max deviation: 0.44721359549995787
+  File "C:\Users\atchi\Desktop\e8-theory-of-everything\physics\e8_first_principles_proof.py", line 614, in <module>
+    results = run_first_principles_proof()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\atchi\Desktop\e8-theory-of-everything\physics\e8_first_principles_proof.py", line 484, in run_first_principles_proof
+    P_par, P_perp = elser_sloane_projections()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\atchi\Desktop\e8-theory-of-everything\physics\e8_first_principles_proof.py", line 103, in elser_sloane_projections
+    assert np.allclose(total, np.eye(8), rtol=1e-10), "Projections don't sum to identity"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Projections don't sum to identity
