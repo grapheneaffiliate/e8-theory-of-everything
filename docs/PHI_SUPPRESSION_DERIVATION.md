@@ -420,19 +420,29 @@ With scaling constant k = φ²/(2√2) to maintain R=1, e₄=1:
 ```
 e₁e₂e₃e₄ = (φ³/√2) × (φ³√3) × φ⁴ × 1
          = φ¹⁰ × √(3/2)
-         ≈ 122.99 × 1.225 ≈ 150.7
 ```
 
-**The edge product contains φ¹⁰ - much stronger than 600-cell's φ⁻¹!**
+**Exact form:**
+```
+e₁e₂e₃e₄ = √6 × (1+√5)¹⁰ / 49152
+```
+
+**The edge product contains φ¹⁰ (or (1+√5)¹⁰/2¹⁰) - much stronger than 600-cell's φ⁻¹!**
+
+### 120-Cell Orthoscheme Volume (Exact)
+
+```
+V_orthoscheme = (1/24) × √6 × (1+√5)¹⁰ / 49152
+              ≈ 4.108 × 10⁻⁵
+```
 
 ### Full 120-Cell Hypervolume
 
 ```
-V_orthoscheme = (1/24) × φ¹⁰ × √(3/2)
 V_120-cell = 14400 × V_orthoscheme ≈ 475.264
 ```
 
-The 120-cell hypervolume scales with **positive φ powers** in the edge product, but the overall formula has φ⁻⁶ when normalized differently.
+The 120-cell hypervolume scales with **positive φ powers** (φ¹⁰ in edge product), reflecting its "rounder" shape and denser vertex packing compared to the 600-cell.
 
 ### Both H₄ Polytopes Have φ Factors
 
