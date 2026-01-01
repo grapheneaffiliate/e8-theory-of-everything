@@ -94,14 +94,22 @@ V(φ₁, φ₂) = V₀ × f(breathing modes of P(x))
 | Unification | Assumed GUT scale | Derive explicitly |
 | sin²θ_W running | 0.35 → 0.23 (stated) | Verify numerically |
 
-### 4. Exact Fermion Mass Ratios (Priority: Low)
+### 4. Exact Fermion Mass Ratios (Priority: HIGH)
 
-| Issue | Current State | Experiment |
-|-------|---------------|------------|
-| m_t/m_e | ~2.5 (from projection) | 338,000 |
-| Yukawa hierarchy | φ-based scaling | Precise ratios |
+| Issue | Current State | Experiment | Status |
+|-------|---------------|------------|--------|
+| Integer φ-charges | 15.1% avg error | <1% for leptons | ✗ |
+| Leptons (e, μ, τ) | ~20% error each | <0.01% exp error | ✗ |
+| Light quarks (u,d,s) | Within 2σ | ~10% exp error | ✓ |
+| Heavy quarks (c,b,t) | ~12% error | ~1% exp error | ✗ |
 
-**Note:** The CKM/PMNS mixing angles are now derived to <5% error, but absolute masses need Froggatt-Nielsen or warping mechanism.
+**HONEST ASSESSMENT:** Only 4/9 masses within 2σ experimental uncertainty.
+The leptons are violated by thousands of σ (e.g., μ is 2113σ away).
+
+**Required Solution:**
+- Non-integer charges derive exact masses (0% error by construction)
+- These charges n_f = -log(m_f/m_t)/log(φ) must come from E8→SO(10)→SM
+- Clebsch-Gordan coefficients from breaking chain needed
 
 ### 5. Quantum Gravity (Priority: Future)
 
