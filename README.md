@@ -26,7 +26,7 @@ I have now **simulated** the full dynamics of the E8→H4 quasicrystal vacuum, d
 ### The Master Equation (Fully Annotated)
 
 ```
-L = (∂P/∂t)² - (∇P)² - λ(PP^T - I)² + Tr(P·R·R^T·P^T)
+L = ½(∂P/∂t)² - ½|∇P|² - λ(PP^T - I₄)² + Tr(P·R·R^T·P^T)
     ├──────────────┤   ├────────────┤   ├──────────────┤
          Kinetic        H4 Constraint      E8 Potential
     
