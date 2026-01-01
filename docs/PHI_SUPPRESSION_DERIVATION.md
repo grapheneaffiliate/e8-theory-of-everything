@@ -233,6 +233,51 @@ This is the formula used throughout this document for 600-cell, 120-cell, and 24
 
 ---
 
+## Method: Deriving Orthoscheme Edge Lengths
+
+The **characteristic radii** e₁, e₂, e₃, e₄ are distances between successive centers along the path:
+
+```
+Polytope center → Cell center → Face center → Edge center → Vertex
+```
+
+### General Derivation Method
+
+1. **Fix normalization:** Circumradius R = 1 (so e₄ = 1 for most conventions)
+2. **Use coordinates:** Place polytope in standard orthogonal coordinates
+3. **Compute centroids successively:**
+   - Center of k-face = average of its vertices
+   - e_i = distance from (k-1)-center to k-center
+4. **Or use Coxeter formulas:** Based on dihedral angles and Schläfli symbol
+
+### Edge Lengths Summary (R = 1)
+
+| Polytope | e₁ (center→cell) | e₂ (cell→face) | e₃ (face→edge) | e₄ (edge→vertex) |
+|----------|------------------|----------------|----------------|------------------|
+| **600-cell** | φ²/(2√2) | 1/(2φ) | 1/(φ√6) | 1/(φ√2) |
+| **120-cell** | φ³/√2 | φ³√3 | φ⁴ | 1 |
+| **24-cell** | 1/√2 | 1/√6 | 1/(2√3) | 1 |
+
+### Why H₄ Polytopes Have φ
+
+The **5** in Schläfli symbols {3,3,5} and {5,3,3} introduces five-fold symmetry:
+- Dihedral angles involve cos⁻¹(±1/√5) or cos⁻¹(±φ/2)
+- Vertex coordinates contain ±φ/2, ±1/(2φ)
+- √5 = 2φ - 1 propagates φ through all geometric quantities
+
+The **4** in {3,4,3} (24-cell) gives only four-fold symmetry:
+- All coordinates are rational (±1, ±½)
+- No √5, no φ
+
+### Duality and Reciprocals
+
+For dual polytopes (600-cell ↔ 120-cell):
+- Path reverses: cells ↔ vertices
+- Edge lengths are **reciprocals** (scaled to maintain R=1)
+- This causes φ⁻¹ (600-cell) to become φ⁺ (120-cell)
+
+---
+
 ## Appendix A: 600-Cell Detailed Orthoscheme Derivation
 
 ### The Characteristic Orthoscheme (Goursat Tetrahedron)
