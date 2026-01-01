@@ -248,6 +248,65 @@ This φ suppression in the volume element directly supports the φ⁻³ per dime
 
 ---
 
+## Appendix B: 24-Cell Comparison (Why φ is UNIQUE to H4)
+
+### The 24-Cell Orthoscheme (F₄ Symmetry)
+
+For comparison, we derive the 24-cell orthoscheme volume to show that φ suppression is **unique to H4**.
+
+The 24-cell (Schläfli symbol {3,4,3}) has F₄ symmetry (order 1152). Its orthogonal edge lengths for a=1 (R=1):
+
+| Edge | Formula | Value |
+|------|---------|-------|
+| e₁ (center → cell) | √(1/2) | ≈ 0.707 |
+| e₂ (cell → face) | √(1/6) | ≈ 0.408 |
+| e₃ (face → edge) | √(1/12) | ≈ 0.289 |
+| e₄ (edge → vertex) | √(1/4) | = 0.500 |
+
+### Product Computation
+
+```
+e₁e₂e₃e₄ = √(1/2) × √(1/6) × √(1/12) × √(1/4)
+         = √(1/576)
+         = 1/24
+```
+
+**Note: ALL RATIONAL - No φ factors!**
+
+### 24-Cell Orthoscheme Volume
+
+```
+V_orthoscheme = (1/24) × (1/24) = 1/576
+```
+
+### Full 24-Cell Hypervolume
+
+```
+V_24-cell = 1152 × (1/576) = 2
+```
+
+This is the exact integer hypervolume for the 24-cell.
+
+---
+
+## The Key Difference: H4 vs F₄
+
+| Property | 600-Cell (H₄) | 24-Cell (F₄) |
+|----------|---------------|--------------|
+| Symmetry | Icosahedral | Octahedral |
+| Edge product | ∝ 1/φ | = 1/24 (rational) |
+| Hypervolume | ∝ 1/φ³ | = 2 (integer) |
+| φ factors | YES | NO |
+| UV suppression | φ⁻³ per dimension | None (trivial) |
+
+**CONCLUSION:** The φ suppression is **UNIQUE to H4 symmetry** (icosahedral/600-cell).
+
+Other 4-polytopes (24-cell, 120-cell, hypercube) do NOT produce φ factors because they lack the 5-fold (pentagonal) symmetry that introduces √5 = 2φ-1 into the geometry.
+
+**E8 → H4 is special precisely because it selects the ONLY 4D symmetry with natural UV suppression via the golden ratio.**
+
+---
+
 ## References
 
 - Coxeter, H.S.M. "Regular Polytopes" (1973)
