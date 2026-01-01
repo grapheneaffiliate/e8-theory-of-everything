@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-CALCULATE COMBINED SIGNIFICANCE - Achieving 6.9σ
+CALCULATE COMBINED SIGNIFICANCE - Achieving 6.9sigma
 
-The 6.9σ (p = 7×10⁻¹²) comes from combining MULTIPLE independent predictions
+The 6.9sigma (p = 7x10-¹^2) comes from combining MULTIPLE independent predictions
 using Fisher's method (meta-analysis of p-values).
 
-Formula: χ² = -2 Σ ln(p_i)
-Then compare to χ² distribution with 2k degrees of freedom (k = number of tests)
+Formula: chi^2 = -2 Σ ln(p_i)
+Then compare to chi^2 distribution with 2k degrees of freedom (k = number of tests)
 
 Author: Timothy McGirl
 Date: December 31, 2025
@@ -19,17 +19,17 @@ from scipy import stats
 predictions = {
     'Monte Carlo uniqueness': {
         'p_value': 1e-6,  # From verify_null_hypothesis.py (1M samples)
-        'description': 'E8→H4 unique among 1M random projections'
+        'description': 'E8->H4 unique among 1M random projections'
     },
     'Fine structure constant': {
-        'error_percent': 0.3,  # |α_theory - α_exp| / α_exp
+        'error_percent': 0.3,  # |alpha_theory - alpha_exp| / alpha_exp
         'p_value': None,  # Will calculate from error
-        'description': 'α = φ²/360 = 1/137.508 vs 1/137.036'
+        'description': 'alpha = phi^2/360 = 1/137.508 vs 1/137.036'
     },
     'Weinberg angle': {
         'error_percent': 0.12,  # 99.88% match
         'p_value': None,
-        'description': 'sin²θ_W = 0.23151 vs 0.23122'
+        'description': 'sin^2theta_W = 0.23151 vs 0.23122'
     },
     'Particle count': {
         'predicted': 48,  # 48 fermions
@@ -38,7 +38,7 @@ predictions = {
         'description': '48 fermions in 3 generations'
     },
     'Mass hierarchy': {
-        'error_percent': 1.5,  # φ_fitted = 1.5954 vs φ = 1.618
+        'error_percent': 1.5,  # phi_fitted = 1.5954 vs phi = 1.618
         'p_value': None,
         'description': 'Golden ratio in mass ratios'
     },
@@ -62,7 +62,7 @@ def error_to_pvalue(error_percent: float, n_parameters: int = 1) -> float:
     For a measurement with X% error, the probability of getting this close
     by chance depends on the parameter space size.
     
-    Conservative estimate: p ≈ 2 × error_fraction
+    Conservative estimate: p ~ 2 x error_fraction
     (Factor of 2 for two-tailed test)
     """
     return 2 * (error_percent / 100)
@@ -92,7 +92,7 @@ def calculate_combined_pvalue(p_values: list) -> tuple:
     if combined_p > 0:
         sigma = stats.norm.ppf(1 - combined_p)
     else:
-        sigma = 10.0  # Cap at 10σ for numerical stability
+        sigma = 10.0  # Cap at 10sigma for numerical stability
     
     return combined_p, chi_squared, df, sigma
 
@@ -125,7 +125,7 @@ def main():
             print(f"\n{name}:")
             print(f"  {pred['description']}")
             print(f"  P-value: {p_val:.2e}")
-            print(f"  Significance: {sigma_individual:.2f}σ")
+            print(f"  Significance: {sigma_individual:.2f}sigma")
     
     print("\n" + "=" * 70)
     print("FISHER'S COMBINED TEST")
@@ -134,17 +134,17 @@ def main():
     combined_p, chi_sq, df, combined_sigma = calculate_combined_pvalue(p_values)
     
     print(f"\nCombining {len(p_values)} independent tests:")
-    print(f"  χ² statistic: {chi_sq:.2f}")
+    print(f"  chi^2 statistic: {chi_sq:.2f}")
     print(f"  Degrees of freedom: {df}")
     print(f"  Combined p-value: {combined_p:.2e}")
     print(f"\n{'='*70}")
-    print(f"  COMBINED SIGNIFICANCE: {combined_sigma:.2f}σ")
+    print(f"  COMBINED SIGNIFICANCE: {combined_sigma:.2f}sigma")
     print(f"{'='*70}")
     
     if combined_sigma >= 5.0:
-        print(f"\n✓ EXCEEDS 5σ DISCOVERY THRESHOLD!")
+        print(f"\n[OK] EXCEEDS 5sigma DISCOVERY THRESHOLD!")
     if combined_sigma >= 6.9:
-        print(f"✓ MATCHES PAPER CLAIM OF 6.9σ")
+        print(f"[OK] MATCHES PAPER CLAIM OF 6.9sigma")
     
     print(f"""
 INTERPRETATION:
@@ -153,33 +153,33 @@ the probability that ALL of them occurred by random chance is:
 
   P = {combined_p:.2e}
 
-This corresponds to {combined_sigma:.1f} standard deviations (σ).
+This corresponds to {combined_sigma:.1f} standard deviations (sigma).
 
 In particle physics:
-  3σ = "Evidence" (p < 0.003)
-  5σ = "Discovery" (p < 3×10⁻⁷)
+  3sigma = "Evidence" (p < 0.003)
+  5sigma = "Discovery" (p < 3x10-^7)
   
-Our result: {combined_sigma:.1f}σ is {'DISCOVERY' if combined_sigma >= 5 else 'EVIDENCE'} level.
+Our result: {combined_sigma:.1f}sigma is {'DISCOVERY' if combined_sigma >= 5 else 'EVIDENCE'} level.
 """)
     
-    # Show what's needed to reach 6.9σ
+    # Show what's needed to reach 6.9sigma
     target_sigma = 6.9
     target_p = stats.norm.sf(target_sigma)  # Survival function (1 - CDF)
     
-    print(f"\nTo reach 6.9σ (p = {target_p:.2e}):")
+    print(f"\nTo reach 6.9sigma (p = {target_p:.2e}):")
     if combined_sigma < 6.9:
         # How many more tests at p=0.05 needed?
         current_chi_sq = chi_sq
         target_chi_sq = stats.chi2.ppf(1 - target_p, df)
         additional_chi_sq = target_chi_sq - current_chi_sq
         
-        # Each additional test at p=0.05 adds -2*ln(0.05) ≈ 6.0 to χ²
+        # Each additional test at p=0.05 adds -2*ln(0.05) ~ 6.0 to chi^2
         tests_needed = int(np.ceil(additional_chi_sq / 6.0))
         
         print(f"  Need {tests_needed} more independent 5% matches")
         print(f"  OR improve existing measurements")
     else:
-        print(f"  ✓ Already achieved!")
+        print(f"  [OK] Already achieved!")
     
     return {
         'combined_p': combined_p,

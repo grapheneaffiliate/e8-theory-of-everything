@@ -2,18 +2,18 @@
 """
 E8 MASS SPECTRUM ANALYSIS - Particle Family Discovery
 
-This script analyzes the projected root lengths ||P·r|| from the Elser-Sloane
-E8 → H4 projection to determine if they cluster into distinct masses
+This script analyzes the projected root lengths ||P*r|| from the Elser-Sloane
+E8 -> H4 projection to determine if they cluster into distinct masses
 corresponding to Standard Model particle families.
 
 Key Hypothesis: The 240 E8 roots, when projected by the Universe Matrix P,
 should cluster into discrete length bins corresponding to:
-- 3 generations of leptons (e, μ, τ)  
+- 3 generations of leptons (e, mu, tau)  
 - 3 generations of quarks (u/d, c/s, t/b)
 - Gauge bosons (effectively massless)
 - Neutrinos (nearly massless)
 
-The mass hierarchy emerges from the GEOMETRY of the E8→H4 folding.
+The mass hierarchy emerges from the GEOMETRY of the E8->H4 folding.
 
 Author: E8 Theory of Everything Project
 Date: December 2025
@@ -51,7 +51,7 @@ class MassSpectrumAnalyzer:
     """
     Analyze the mass spectrum of projected E8 roots.
     
-    The projected lengths ||P·r|| are interpreted as particle "masses"
+    The projected lengths ||P*r|| are interpreted as particle "masses"
     (in arbitrary units - ratios are what matter).
     """
     
@@ -61,7 +61,7 @@ class MassSpectrumAnalyzer:
         self.projected_lengths = self._compute_projected_lengths()
         
     def _compute_projected_lengths(self) -> np.ndarray:
-        """Compute ||P·r|| for all 240 E8 roots."""
+        """Compute ||P*r|| for all 240 E8 roots."""
         lengths = []
         for root in self.roots.roots:
             Pr = self.projection.project(root)
@@ -117,11 +117,11 @@ class MassSpectrumAnalyzer:
         # Assign roots to clusters based on nearest peak
         families = []
         cluster_names = [
-            "Neutrino-like (ν)",
+            "Neutrino-like (nu)",
             "Light leptons (e)",
             "Light quarks (u,d)",
-            "2nd gen (μ,c,s)",
-            "3rd gen (τ,b)",
+            "2nd gen (mu,c,s)",
+            "3rd gen (tau,b)",
             "Heavy (t,H,W,Z)"
         ]
         
@@ -164,11 +164,11 @@ class MassSpectrumAnalyzer:
         Analyze ratios between mass clusters.
         
         Key SM mass ratios to look for:
-        - m_τ/m_e ≈ 3477
-        - m_μ/m_e ≈ 206.8
-        - m_t/m_e ≈ 339,000
-        - m_b/m_c ≈ 3.0
-        - Golden ratio φ ≈ 1.618 (from E8 structure)
+        - m_tau/m_e ~ 3477
+        - m_mu/m_e ~ 206.8
+        - m_t/m_e ~ 339,000
+        - m_b/m_c ~ 3.0
+        - Golden ratio phi ~ 1.618 (from E8 structure)
         """
         families = self.find_mass_clusters()
         
@@ -186,9 +186,9 @@ class MassSpectrumAnalyzer:
             if abs(ratio - PHI) < 0.1:
                 golden_ratios.append((key, ratio))
             if abs(ratio - PHI**2) < 0.2:
-                golden_ratios.append((key, ratio, "φ²"))
+                golden_ratios.append((key, ratio, "phi^2"))
             if abs(ratio - PHI**3) < 0.5:
-                golden_ratios.append((key, ratio, "φ³"))
+                golden_ratios.append((key, ratio, "phi^3"))
         
         return {
             'cluster_ratios': ratios,
@@ -203,10 +203,10 @@ class MassSpectrumAnalyzer:
         Analyze the distribution of angles between projected roots.
         
         The 600-cell should show characteristic angles at:
-        - cos θ = ±1 (parallel/antiparallel)
-        - cos θ = ±1/√5 ≈ ±0.447 (icosahedral)
-        - cos θ = 0 (orthogonal)
-        - cos θ = ±1/φ ≈ ±0.618 (golden angle)
+        - cos theta = +/-1 (parallel/antiparallel)
+        - cos theta = +/-1/sqrt5 ~ +/-0.447 (icosahedral)
+        - cos theta = 0 (orthogonal)
+        - cos theta = +/-1/phi ~ +/-0.618 (golden angle)
         """
         projected_roots = self.projection.project_all(self.roots.roots)
         
@@ -244,8 +244,8 @@ class MassSpectrumAnalyzer:
         Attempt to identify projected roots with Standard Model particles.
         
         E8 contains the representations of all SM particles:
-        - 112 roots with integer coords → Gauge bosons & their partners
-        - 128 roots with half-integer coords → Fermions (quarks & leptons)
+        - 112 roots with integer coords -> Gauge bosons & their partners
+        - 128 roots with half-integer coords -> Fermions (quarks & leptons)
         
         The half-integer roots with even/odd minus signs correspond to
         left/right-handed spinors.
@@ -290,9 +290,9 @@ class MassSpectrumAnalyzer:
         ax1.hist(self.projected_lengths, bins=30, edgecolor='black', alpha=0.7)
         ax1.axvline(np.mean(self.projected_lengths), color='red', 
                    linestyle='--', label=f'Mean = {np.mean(self.projected_lengths):.4f}')
-        ax1.set_xlabel('Projected Length ||P·r||', fontsize=12)
+        ax1.set_xlabel('Projected Length ||P*r||', fontsize=12)
         ax1.set_ylabel('Count', fontsize=12)
-        ax1.set_title('E8→H4 Mass Spectrum (Elser-Sloane Projection)', fontsize=14)
+        ax1.set_title('E8->H4 Mass Spectrum (Elser-Sloane Projection)', fontsize=14)
         ax1.legend()
         ax1.grid(True, alpha=0.3)
         
@@ -301,7 +301,7 @@ class MassSpectrumAnalyzer:
         colors = ['blue'] * 112 + ['red'] * 128  # Integer vs half-integer
         ax2.scatter(range(240), self.projected_lengths, c=colors, alpha=0.6, s=20)
         ax2.set_xlabel('Root Index', fontsize=12)
-        ax2.set_ylabel('Projected Length ||P·r||', fontsize=12)
+        ax2.set_ylabel('Projected Length ||P*r||', fontsize=12)
         ax2.set_title('Mass by Root Type (Blue=Integer, Red=Half-integer)', fontsize=14)
         ax2.grid(True, alpha=0.3)
         
@@ -309,7 +309,7 @@ class MassSpectrumAnalyzer:
         ax3 = axes[1, 0]
         ax3.hist(np.log10(self.projected_lengths + 1e-10), bins=30, 
                 edgecolor='black', alpha=0.7, color='green')
-        ax3.set_xlabel('log₁₀(||P·r||)', fontsize=12)
+        ax3.set_xlabel('log_1_0(||P*r||)', fontsize=12)
         ax3.set_ylabel('Count', fontsize=12)
         ax3.set_title('Log-Scale Mass Distribution', fontsize=14)
         ax3.grid(True, alpha=0.3)
@@ -319,7 +319,7 @@ class MassSpectrumAnalyzer:
         sorted_masses = np.sort(self.projected_lengths)
         cumulative = np.arange(1, len(sorted_masses) + 1) / len(sorted_masses)
         ax4.plot(sorted_masses, cumulative, 'b-', linewidth=2)
-        ax4.set_xlabel('Projected Length ||P·r||', fontsize=12)
+        ax4.set_xlabel('Projected Length ||P*r||', fontsize=12)
         ax4.set_ylabel('Cumulative Fraction', fontsize=12)
         ax4.set_title('Cumulative Mass Distribution', fontsize=14)
         ax4.grid(True, alpha=0.3)
@@ -349,20 +349,20 @@ class MassSpectrumAnalyzer:
         
         report = []
         report.append("=" * 80)
-        report.append("E8→H4 MASS SPECTRUM ANALYSIS REPORT")
+        report.append("E8->H4 MASS SPECTRUM ANALYSIS REPORT")
         report.append("=" * 80)
         
         report.append("\n[1] BASIC STATISTICS")
         report.append(f"    Total roots: {stats['n_roots']}")
         report.append(f"    Mass range: [{stats['min_mass']:.6f}, {stats['max_mass']:.6f}]")
-        report.append(f"    Mean mass: {stats['mean_mass']:.6f} ± {stats['std_mass']:.6f}")
+        report.append(f"    Mean mass: {stats['mean_mass']:.6f} +/- {stats['std_mass']:.6f}")
         report.append(f"    Max/Min ratio: {stats['mass_range_ratio']:.4f}")
         
         report.append("\n[2] PARTICLE FAMILIES (Mass Clusters)")
         for i, family in enumerate(families):
             report.append(f"\n    Family {i+1}: {family.name}")
             report.append(f"      Mass range: [{family.mass_range[0]:.4f}, {family.mass_range[1]:.4f}]")
-            report.append(f"      Mean mass: {family.mean_mass:.6f} ± {family.std_mass:.6f}")
+            report.append(f"      Mean mass: {family.mean_mass:.6f} +/- {family.std_mass:.6f}")
             report.append(f"      Particle count: {family.count}")
         
         report.append("\n[3] MASS HIERARCHY RATIOS")
@@ -370,45 +370,45 @@ class MassSpectrumAnalyzer:
             phi_marker = ""
             for gr in ratios['golden_ratio_matches']:
                 if gr[0] == key:
-                    phi_marker = f" ← φ!" if len(gr) == 2 else f" ← {gr[2]}"
+                    phi_marker = f" <- phi!" if len(gr) == 2 else f" <- {gr[2]}"
             report.append(f"    {key}: {ratio:.4f}{phi_marker}")
         
-        report.append(f"\n    Reference: φ = {ratios['phi']:.6f}")
-        report.append(f"    Reference: φ² = {ratios['phi_squared']:.6f}")
-        report.append(f"    Reference: φ³ = {ratios['phi_cubed']:.6f}")
+        report.append(f"\n    Reference: phi = {ratios['phi']:.6f}")
+        report.append(f"    Reference: phi^2 = {ratios['phi_squared']:.6f}")
+        report.append(f"    Reference: phi^3 = {ratios['phi_cubed']:.6f}")
         
         report.append("\n[4] ANGULAR STRUCTURE (600-Cell Verification)")
         report.append(f"    Total angle pairs analyzed: {angles['total_angle_pairs']}")
-        report.append(f"    Icosahedral angles (cos θ ≈ 1/√5): {angles['icosahedral_angles']}")
-        report.append(f"    Golden angles (cos θ ≈ 1/φ): {angles['golden_angles']}")
-        report.append(f"    Orthogonal angles (cos θ ≈ 0): {angles['orthogonal_angles']}")
+        report.append(f"    Icosahedral angles (cos theta ~ 1/sqrt5): {angles['icosahedral_angles']}")
+        report.append(f"    Golden angles (cos theta ~ 1/phi): {angles['golden_angles']}")
+        report.append(f"    Orthogonal angles (cos theta ~ 0): {angles['orthogonal_angles']}")
         
         report.append("\n[5] PARTICLE TYPE ANALYSIS")
         report.append(f"    Integer roots (bosons): {particles['integer_roots']['count']}")
         report.append(f"      Mean mass: {particles['integer_roots']['mean_mass']:.6f}")
-        report.append(f"      → {particles['integer_roots']['interpretation']}")
+        report.append(f"      -> {particles['integer_roots']['interpretation']}")
         report.append(f"    Half-integer roots (fermions): {particles['half_integer_roots']['count']}")
         report.append(f"      Mean mass: {particles['half_integer_roots']['mean_mass']:.6f}")
-        report.append(f"      → {particles['half_integer_roots']['interpretation']}")
+        report.append(f"      -> {particles['half_integer_roots']['interpretation']}")
         report.append(f"    Boson/Fermion mass ratio: {particles['mass_ratio']:.4f}")
         
         report.append("\n" + "=" * 80)
         report.append("INTERPRETATION")
         report.append("=" * 80)
         report.append("""
-The E8→H4 projection via the Elser-Sloane matrix produces a mass spectrum
+The E8->H4 projection via the Elser-Sloane matrix produces a mass spectrum
 that naturally clusters into distinct families. The presence of:
 
-• Golden ratio (φ) in mass hierarchy ratios
-• Icosahedral angles confirming 600-cell geometry  
-• Clear separation of bosonic (integer) and fermionic (half-integer) roots
+* Golden ratio (phi) in mass hierarchy ratios
+* Icosahedral angles confirming 600-cell geometry  
+* Clear separation of bosonic (integer) and fermionic (half-integer) roots
 
 suggests this projection encodes the Standard Model particle structure.
 
 The 112 integer roots correspond to gauge bosons and their superpartners.
 The 128 half-integer roots correspond to the 3 generations of quarks and leptons.
 
-This is consistent with E8 → H4 being the "Geometric Higgs Mechanism"
+This is consistent with E8 -> H4 being the "Geometric Higgs Mechanism"
 that selects our 4D universe from the higher-dimensional symmetry.
 """)
         report.append("=" * 80)

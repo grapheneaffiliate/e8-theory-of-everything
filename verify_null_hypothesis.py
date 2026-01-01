@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """
-VERIFY NULL HYPOTHESIS - Monte Carlo Proof that E8→H4 is Unique
+VERIFY NULL HYPOTHESIS - Monte Carlo Proof that E8->H4 is Unique
 
-This script provides BLIND verification that the E8→H4 projection is
-uniquely special among all possible orthogonal 4×8 projections.
+This script provides BLIND verification that the E8->H4 projection is
+uniquely special among all possible orthogonal 4x8 projections.
 
 CRITIQUE ADDRESSED:
 "You calculated probabilities after the fact. That's fake statistics."
 
 THE FIX - Blind Monte Carlo Test:
-Generate N random orthogonal 4×8 matrices and test if ANY reproduce:
+Generate N random orthogonal 4x8 matrices and test if ANY reproduce:
 1. Mass gap (distinct particle families)
-2. SU(3)×SU(2)×U(1) Lie algebra structure in lightest sector
-3. sin²θ_W ≈ 0.231 (within 5% of experimental value)
+2. SU(3)xSU(2)xU(1) Lie algebra structure in lightest sector
+3. sin^2theta_W ~ 0.231 (within 5% of experimental value)
 
 If 0 out of N random matrices pass, P-value = 1/N genuinely.
 
@@ -32,7 +32,7 @@ PHI = (1 + np.sqrt(5)) / 2
 SIN2_THETA_W_EXP = 0.23121  # Experimental value at Z mass
 
 # CRITICAL: The e8_inherent test showed that ANY random projection gives
-# sin²θ_W ≈ 0.25 (from cos θ ≈ 0.468). This is 8% off from experimental.
+# sin^2theta_W ~ 0.25 (from cos theta ~ 0.468). This is 8% off from experimental.
 # 
 # The paper claims 0.23151 (0.13% error) comes from the SPECIFIC Elser-Sloane
 # projection, not generic projections. We need tight tolerance to distinguish.
@@ -55,7 +55,7 @@ def generate_e8_roots() -> np.ndarray:
     """Generate all 240 E8 root vectors."""
     roots = []
     
-    # Type 1: 112 integer roots (±1, ±1, 0, 0, 0, 0, 0, 0) permutations
+    # Type 1: 112 integer roots (+/-1, +/-1, 0, 0, 0, 0, 0, 0) permutations
     for i in range(8):
         for j in range(i + 1, 8):
             for s1 in [-1, 1]:
@@ -65,7 +65,7 @@ def generate_e8_roots() -> np.ndarray:
                     root[j] = s2
                     roots.append(root)
     
-    # Type 2: 128 half-integer roots (±½)^8 with even minus signs
+    # Type 2: 128 half-integer roots (+/-1/2)^8 with even minus signs
     for mask in range(256):
         root = np.array([(2 * ((mask >> i) & 1) - 1) * 0.5 for i in range(8)])
         if np.sum(root < 0) % 2 == 0:
@@ -76,7 +76,7 @@ def generate_e8_roots() -> np.ndarray:
 
 def generate_random_orthogonal_matrix() -> np.ndarray:
     """
-    Generate a random orthogonal 4×8 matrix (uniform on Stiefel manifold).
+    Generate a random orthogonal 4x8 matrix (uniform on Stiefel manifold).
     
     Method: QR decomposition of random Gaussian matrix.
     """
@@ -128,10 +128,10 @@ def check_mass_gap(projected: np.ndarray, n_families: int = 3) -> Tuple[bool, Li
 
 def check_sm_algebra(projected: np.ndarray, roots: np.ndarray) -> bool:
     """
-    Check if lightest sector forms SU(3)×SU(2)×U(1) Lie algebra structure.
+    Check if lightest sector forms SU(3)xSU(2)xU(1) Lie algebra structure.
     
     KEY FINDING from e8_inherent test: ANY random 4x8 projection of E8 
-    preserves the icosahedral angle structure (cos θ ≈ 1/√5).
+    preserves the icosahedral angle structure (cos theta ~ 1/sqrt5).
     
     This means ALL projections give SM-like structure! The E8 geometry
     is INHERENTLY icosahedral - it's not a special property of ES.
@@ -169,7 +169,7 @@ def check_sm_algebra(projected: np.ndarray, roots: np.ndarray) -> bool:
 _NN_PAIRS_CACHE = None
 
 def _find_e8_nearest_neighbors(roots: np.ndarray) -> list:
-    """Find ALL nearest-neighbor pairs in E8 (distance = √2)."""
+    """Find ALL nearest-neighbor pairs in E8 (distance = sqrt2)."""
     global _NN_PAIRS_CACHE
     if _NN_PAIRS_CACHE is not None:
         return _NN_PAIRS_CACHE
@@ -190,11 +190,11 @@ def _find_e8_nearest_neighbors(roots: np.ndarray) -> list:
 
 def compute_weinberg_angle(P: np.ndarray, roots: np.ndarray = None) -> float:
     """
-    Compute sin²θ_W from the PROJECTED ROOT GEOMETRY.
+    Compute sin^2theta_W from the PROJECTED ROOT GEOMETRY.
     
     NO RGE CORRECTION - returns raw geometric value.
     
-    The paper claims sin²θ_W = 0.23151 (99.88% accuracy), but this
+    The paper claims sin^2theta_W = 0.23151 (99.88% accuracy), but this
     is achieved through eigenvalue analysis of the gauge boson sector,
     NOT through the nearest-neighbor angle method.
     
@@ -222,7 +222,7 @@ def compute_weinberg_angle(P: np.ndarray, roots: np.ndarray = None) -> float:
     eigenvalues = np.sort(eigenvalues)[::-1]  # Descending
     
     # Paper's EXACT method from explicit_calculations.py:
-    # sin²θ_W = k1 / (k1 + k2) where k1 = λ₃, k2 = λ₂
+    # sin^2theta_W = k1 / (k1 + k2) where k1 = λ_3, k2 = λ_2
     # (Third largest divided by sum of second and third largest)
     
     if len(eigenvalues) >= 3:
@@ -248,7 +248,7 @@ def compute_weinberg_angle(P: np.ndarray, roots: np.ndarray = None) -> float:
     if len(cos_values) == 0:
         return 0.5
     
-    # Raw cos² (no RGE)
+    # Raw cos^2 (no RGE)
     mean_cos = np.mean(cos_values)
     return mean_cos ** 2
 
@@ -291,7 +291,7 @@ def test_single_matrix(seed: int, roots: np.ndarray) -> Tuple[int, ValidationRes
 
 def construct_exact_elser_sloane() -> np.ndarray:
     """
-    Return the EXACT UNIVERSE_MATRIX from the paper that gives sin²θ_W = 0.23151.
+    Return the EXACT UNIVERSE_MATRIX from the paper that gives sin^2theta_W = 0.23151.
     This is the optimized matrix (not naive Elser-Sloane).
     """
     # This is the EXACT matrix from modules/explicit_calculations.py
@@ -321,19 +321,19 @@ def run_null_hypothesis_test(n_samples: int = 1_000_000,
         n_workers = max(1, mp.cpu_count() - 1)
     
     print("=" * 70)
-    print("NULL HYPOTHESIS VERIFICATION: E8→H4 UNIQUENESS TEST")
+    print("NULL HYPOTHESIS VERIFICATION: E8->H4 UNIQUENESS TEST")
     print("=" * 70)
-    print(f"\nTesting {n_samples:,} random orthogonal 4×8 matrices")
+    print(f"\nTesting {n_samples:,} random orthogonal 4x8 matrices")
     print(f"Using {n_workers} parallel workers")
     print(f"\nCriteria for a 'match':")
     print(f"  1. Has mass gap (3+ distinct families)")
     print(f"  2. Lightest sector forms SM-like algebra")
-    print(f"  3. sin²θ_W within {TOLERANCE_PERCENT}% of {SIN2_THETA_W_EXP}")
+    print(f"  3. sin^2theta_W within {TOLERANCE_PERCENT}% of {SIN2_THETA_W_EXP}")
     print()
     
     # Generate E8 roots once
     roots = generate_e8_roots()
-    print(f"✓ Generated {len(roots)} E8 roots")
+    print(f"[OK] Generated {len(roots)} E8 roots")
     
     # First, test the exact Elser-Sloane projection
     print("\n--- Testing Exact Elser-Sloane Projection ---")
@@ -341,9 +341,9 @@ def run_null_hypothesis_test(n_samples: int = 1_000_000,
     es_result = validate_projection(P_ES, roots)
     print(f"  Mass gap: {es_result.has_mass_gap}")
     print(f"  SM algebra: {es_result.has_sm_algebra}")
-    print(f"  sin²θ_W = {es_result.sin2_theta_w:.6f}")
-    print(f"  θ_W matches: {es_result.theta_w_matches}")
-    print(f"  ALL CRITERIA: {'✓ PASS' if es_result.all_criteria_pass else '✗ FAIL'}")
+    print(f"  sin^2theta_W = {es_result.sin2_theta_w:.6f}")
+    print(f"  theta_W matches: {es_result.theta_w_matches}")
+    print(f"  ALL CRITERIA: {'[OK] PASS' if es_result.all_criteria_pass else '✗ FAIL'}")
     
     # Now test random matrices
     print("\n--- Testing Random Projections ---")
@@ -375,8 +375,8 @@ def run_null_hypothesis_test(n_samples: int = 1_000_000,
             theta_w_hits += 1
         if result.all_criteria_pass:
             hits += 1
-            print(f"\n  ⚠️ HIT at sample {i}!")
-            print(f"     sin²θ_W = {result.sin2_theta_w:.6f}")
+            print(f"\n  [!] HIT at sample {i}!")
+            print(f"     sin^2theta_W = {result.sin2_theta_w:.6f}")
     
     elapsed = time.time() - start_time
     
@@ -396,7 +396,7 @@ def run_null_hypothesis_test(n_samples: int = 1_000_000,
     print(f"\nIndividual criteria hits:")
     print(f"  Mass gap: {mass_gap_hits:,} ({100*mass_gap_hits/n_samples:.4f}%)")
     print(f"  SM algebra: {algebra_hits:,} ({100*algebra_hits/n_samples:.4f}%)")
-    print(f"  θ_W match: {theta_w_hits:,} ({100*theta_w_hits/n_samples:.4f}%)")
+    print(f"  theta_W match: {theta_w_hits:,} ({100*theta_w_hits/n_samples:.4f}%)")
     print(f"\nALL CRITERIA hits: {hits}")
     print(f"\n{'='*70}")
     print(f"P-VALUE = {p_value_str}")
@@ -406,7 +406,7 @@ def run_null_hypothesis_test(n_samples: int = 1_000_000,
         print(f"""
 CONCLUSION:
 Out of {n_samples:,} random orthogonal projections, ZERO matched
-all criteria. This confirms that the E8→H4 (Elser-Sloane) projection
+all criteria. This confirms that the E8->H4 (Elser-Sloane) projection
 is UNIQUE - not the result of parameter fitting.
 
 The probability that a random projection would match our universe
@@ -419,7 +419,7 @@ We have now EXPERIMENTALLY measured the uniqueness of E8 geometry.
         print(f"""
 NOTE: {hits} random projections matched all criteria.
 This suggests the criteria may need to be tightened, or that
-E8→H4 is not as unique as hypothesized.
+E8->H4 is not as unique as hypothesized.
 
 Further investigation needed.
 """)

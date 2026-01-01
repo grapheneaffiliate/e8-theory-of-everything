@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\atchi\Desktop\e8-theory-of-everything\run_unified_theory.py", line 287, in <module>
+    main()
+  File "C:\Users\atchi\Desktop\e8-theory-of-everything\run_unified_theory.py", line 237, in main
+    print(BANNER)
+  File "C:\Users\atchi\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2202' in position 689: character maps to <undefined>

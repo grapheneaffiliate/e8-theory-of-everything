@@ -33,6 +33,18 @@ import time
 import subprocess
 from pathlib import Path
 
+# Fix Windows console encoding BEFORE any print statements
+if sys.platform == 'win32':
+    # Set environment variable for subprocess calls
+    os.environ['PYTHONIOENCODING'] = 'utf-8'
+    # Try to reconfigure stdout/stderr
+    try:
+        if hasattr(sys.stdout, 'reconfigure'):
+            sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+            sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass  # If reconfiguration fails, environment variable will still help
+
 # Banner
 BANNER = """
 ##########################################################################################
@@ -45,11 +57,16 @@ BANNER = """
 
     THE MASTER EQUATION:
     
-    L = (∂P/∂t)² - (∇P)² - λ(PP^T - I)² + Tr(P·R·R^T·P^T)
-        ├──────────────┤   ├────────────┤   ├──────────────┤
-             Kinetic        H4 Constraint      E8 Potential
+    L[P.r] = (1/2)||d_mu(P.r)||^2  +  lambda||P.r||^4  -  g^-2 SUM|cos(theta_ij) - 1/sqrt(5)|
+             |_________|__________|     |________|_____|     |_______________|_______________|
+                    Kinetic                 Higgs                     H4 Locking
+                  (Graviton)               (Mass)                  (Gauge Structure)
 
-    Where P(x,t): R⁸ → R⁴ is the Elser-Sloane projection matrix
+    Where:
+        P(x) in V_4(R^8)     4x8 Stiefel manifold (orthonormal projection)
+        r in E8              240 root vectors of E8 Lie algebra
+        g^-2 = 1/alpha ~ 137 Wilson action coupling
+        cos(theta_H4) = 1/sqrt(5)  Icosahedral dihedral angle
 
 """
 
@@ -115,6 +132,8 @@ def run_module(script_path, name, expected_result):
             [sys.executable, script_path],
             capture_output=True,
             text=True,
+            encoding='utf-8',
+            errors='replace',
             timeout=300  # 5 minute timeout
         )
         
@@ -197,15 +216,16 @@ def print_summary(results, modules_run, elapsed):
 #{'':88}#
 {'#'*90}
 
-    L = (∂P/∂t)² - (∇P)² - λ(PP^T - I)² + Tr(P·R·R^T·P^T)
+    L[P.r] = (1/2)||d_mu(P.r)||^2 + lambda||P.r||^4 - g^-2 SUM|cos(theta) - 1/sqrt(5)|
+             |_____Kinetic_____|   |____Higgs____|   |________H4 Locking________|
 
     From this single Lagrangian, we derive ALL physics:
 
-        ✓ MATTER:  6 particle families from root lengths |P·r|
-        ✓ FORCES:  Photon from rotations of P (v = c)
-        ✓ MASS:    Higgs from amplitude changes (v < c)
-        ✓ GRAVITY: Spacetime curvature from strain of P
-        ✓ α:       Fine structure = φ²/360 = 1/137.5
+        Matter:   6 particle families from root lengths ||P.r||
+        Forces:   Photon from rotations of P(x) (v = c)
+        Mass:     Higgs from potential term (v < c)
+        Gravity:  Spacetime curvature from kinetic term
+        alpha:    Fine structure = phi^2/360 = 1/137.5
 
     ===============================================================
                     NATURE IS E8

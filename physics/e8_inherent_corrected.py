@@ -3,10 +3,10 @@
 E8 INHERENT GOLDEN RATIO TEST
 =============================
 
-HYPOTHESIS: The icosahedral angle 1/√5 = 0.447 is INHERENT to E8 geometry,
+HYPOTHESIS: The icosahedral angle 1/sqrt5 = 0.447 is INHERENT to E8 geometry,
 not imposed by the Elser-Sloane projection.
 
-TEST: Take 1000 completely RANDOM 4×8 projections and compute ⟨cos θ⟩
+TEST: Take 1000 completely RANDOM 4x8 projections and compute <cos theta>
 for E8 nearest-neighbor pairs. If this consistently gives ~0.447,
 the golden ratio is TOPOLOGICAL, not dynamical.
 
@@ -22,14 +22,14 @@ from typing import Tuple, List, Dict
 # Constants
 PHI = (1 + np.sqrt(5)) / 2
 TARGET_COS = 1.0 / np.sqrt(5)  # 0.447214
-ICOSAHEDRAL_DIHEDRAL = np.degrees(np.arccos(TARGET_COS))  # 63.43°
+ICOSAHEDRAL_DIHEDRAL = np.degrees(np.arccos(TARGET_COS))  # 63.43 deg
 
 
 def generate_e8_roots() -> np.ndarray:
     """Generate all 240 E8 root vectors."""
     roots = []
     
-    # Type 1: 112 integer roots (±1, ±1, 0...0)
+    # Type 1: 112 integer roots (+/-1, +/-1, 0...0)
     for i in range(8):
         for j in range(i + 1, 8):
             for s1, s2 in [(1,1), (1,-1), (-1,1), (-1,-1)]:
@@ -37,7 +37,7 @@ def generate_e8_roots() -> np.ndarray:
                 r[i], r[j] = s1, s2
                 roots.append(r)
     
-    # Type 2: 128 half-integer roots (±½)^8 with even minus signs
+    # Type 2: 128 half-integer roots (+/-1/2)^8 with even minus signs
     for signs in product([0.5, -0.5], repeat=8):
         if sum(1 for s in signs if s < 0) % 2 == 0:
             roots.append(np.array(signs))
@@ -47,9 +47,9 @@ def generate_e8_roots() -> np.ndarray:
 
 def find_e8_nearest_neighbors(roots: np.ndarray) -> List[Tuple[int, int]]:
     """
-    Find nearest-neighbor pairs in E8 (distance = √2).
+    Find nearest-neighbor pairs in E8 (distance = sqrt2).
     
-    In E8, nearest neighbors have distance √2 between them.
+    In E8, nearest neighbors have distance sqrt2 between them.
     This is a TOPOLOGICAL property of the root lattice.
     """
     n = len(roots)
@@ -66,7 +66,7 @@ def find_e8_nearest_neighbors(roots: np.ndarray) -> List[Tuple[int, int]]:
 
 
 def random_projection_4x8() -> np.ndarray:
-    """Generate a random orthonormal 4×8 projection matrix."""
+    """Generate a random orthonormal 4x8 projection matrix."""
     # Generate random 8x4 matrix and take QR decomposition
     A = np.random.randn(8, 4)
     Q, R = qr(A, mode='economic')  # Q is 8x4, R is 4x4
@@ -80,7 +80,7 @@ def random_projection_4x8() -> np.ndarray:
 def compute_cos_theta(P: np.ndarray, roots: np.ndarray, 
                        pairs: List[Tuple[int, int]]) -> float:
     """
-    Compute mean cos θ between projected nearest-neighbor pairs.
+    Compute mean cos theta between projected nearest-neighbor pairs.
     
     This is the KEY observable: what angle do E8 neighbors make
     when projected to 4D?
@@ -106,17 +106,17 @@ def run_inherent_test(n_trials: int = 1000) -> Dict:
     """
     Run the inherent golden ratio test.
     
-    Hypothesis: ⟨cos θ⟩ ≈ 1/√5 = 0.447 for ANY random projection.
+    Hypothesis: <cos theta> ~ 1/sqrt5 = 0.447 for ANY random projection.
     """
     print("=" * 70)
     print("E8 INHERENT GOLDEN RATIO TEST")
     print("=" * 70)
     print()
-    print("Hypothesis: The icosahedral angle 1/√5 ≈ 0.447 emerges from")
-    print("            ANY random 4×8 projection of E8 nearest neighbors.")
+    print("Hypothesis: The icosahedral angle 1/sqrt5 ~ 0.447 emerges from")
+    print("            ANY random 4x8 projection of E8 nearest neighbors.")
     print()
-    print("If true → Golden ratio is TOPOLOGICAL (inherent to E8)")
-    print("If false → Golden ratio requires specific Elser-Sloane projection")
+    print("If true -> Golden ratio is TOPOLOGICAL (inherent to E8)")
+    print("If false -> Golden ratio requires specific Elser-Sloane projection")
     print()
     
     # Generate E8 roots and find neighbors
@@ -124,7 +124,7 @@ def run_inherent_test(n_trials: int = 1000) -> Dict:
     print(f"Generated {len(roots)} E8 roots")
     
     pairs = find_e8_nearest_neighbors(roots)
-    print(f"Found {len(pairs)} nearest-neighbor pairs (distance = √2)")
+    print(f"Found {len(pairs)} nearest-neighbor pairs (distance = sqrt2)")
     print()
     
     # Run many random projections
@@ -143,8 +143,8 @@ def run_inherent_test(n_trials: int = 1000) -> Dict:
             current_mean = np.mean(results)
             current_std = np.std(results)
             error = abs(current_mean - TARGET_COS) / TARGET_COS * 100
-            print(f"  After {trial + 1:4d} trials: ⟨cos θ⟩ = {current_mean:.4f} ± {current_std:.4f} "
-                  f"(error from 1/√5: {error:.2f}%)")
+            print(f"  After {trial + 1:4d} trials: <cos theta> = {current_mean:.4f} +/- {current_std:.4f} "
+                  f"(error from 1/sqrt5: {error:.2f}%)")
     
     # Final statistics
     results = np.array(results)
@@ -161,12 +161,12 @@ def run_inherent_test(n_trials: int = 1000) -> Dict:
     print(f"Number of random projections tested: {n_trials}")
     print(f"Number of E8 neighbor pairs: {len(pairs)}")
     print()
-    print(f"Mean ⟨cos θ⟩ = {mean_cos:.6f} ± {std_cos:.6f}")
-    print(f"Target 1/√5  = {TARGET_COS:.6f}")
+    print(f"Mean <cos theta> = {mean_cos:.6f} +/- {std_cos:.6f}")
+    print(f"Target 1/sqrt5  = {TARGET_COS:.6f}")
     print(f"Error        = {error_pct:.2f}%")
     print()
-    print(f"Mean angle   = {mean_angle:.2f}°")
-    print(f"Icosahedral dihedral = {ICOSAHEDRAL_DIHEDRAL:.2f}°")
+    print(f"Mean angle   = {mean_angle:.2f} deg")
+    print(f"Icosahedral dihedral = {ICOSAHEDRAL_DIHEDRAL:.2f} deg")
     print()
     
     # Verdict
@@ -177,10 +177,10 @@ def run_inherent_test(n_trials: int = 1000) -> Dict:
     if error_pct < 5.0:
         verdict = "CONFIRMED"
         print()
-        print("✓ THE GOLDEN RATIO IS INHERENT TO E8")
+        print("[OK] THE GOLDEN RATIO IS INHERENT TO E8")
         print()
-        print("The icosahedral angle cos θ = 1/√5 ≈ 0.447 emerges from")
-        print("E8 nearest-neighbor pairs under ANY random 4×8 projection.")
+        print("The icosahedral angle cos theta = 1/sqrt5 ~ 0.447 emerges from")
+        print("E8 nearest-neighbor pairs under ANY random 4x8 projection.")
         print()
         print("This means:")
         print("  1. The H4 locking term is NOT arbitrary")
@@ -191,7 +191,7 @@ def run_inherent_test(n_trials: int = 1000) -> Dict:
     elif error_pct < 10.0:
         verdict = "SUGGESTIVE"
         print()
-        print("⚠ SUGGESTIVE: Close but not conclusive")
+        print("[!] SUGGESTIVE: Close but not conclusive")
         print(f"   Error {error_pct:.1f}% is between 5% and 10%")
     else:
         verdict = "NOT_CONFIRMED"
@@ -221,7 +221,7 @@ if __name__ == "__main__":
     
     # Additional analysis: histogram of results
     print()
-    print("Distribution of ⟨cos θ⟩ values:")
+    print("Distribution of <cos theta> values:")
     hist, edges = np.histogram(results['all_results'], bins=20)
     max_count = max(hist)
     for i, count in enumerate(hist):

@@ -2,23 +2,23 @@
 """
 E8 GRAVITY SIMULATION - METRIC TENSOR FROM LATTICE STRAIN
 
-This script demonstrates that GRAVITY emerges from the E8→H4 quasicrystal
+This script demonstrates that GRAVITY emerges from the E8->H4 quasicrystal
 as the ELASTIC STRAIN of the vacuum around a mass defect.
 
 Key Concepts:
 - Matter = localized "defect" or "knot" in the projection field P(x)
 - Gravity = curvature induced by the lattice stretching to accommodate the defect
-- Metric Tensor g_μν = derived from the strain tensor of P(x)
+- Metric Tensor g_munu = derived from the strain tensor of P(x)
 
 In General Relativity:
-    ds² = g_μν dx^μ dx^ν
+    ds^2 = g_munu dx^mu dx^nu
     
 In our theory:
-    g_μν(x) = η_μν + h_μν(x)
+    g_munu(x) = eta_munu + h_munu(x)
     
-where h_μν is the metric perturbation induced by the mass defect.
+where h_munu is the metric perturbation induced by the mass defect.
 
-If the simulation shows 1/r decay of h_μν around a point mass,
+If the simulation shows 1/r decay of h_munu around a point mass,
 we have derived Newtonian gravity from pure E8 geometry!
 
 Author: E8 Theory of Everything Project
@@ -55,18 +55,18 @@ class GravityResult:
 
 class E8GravitySolver:
     """
-    Solve for the METRIC TENSOR induced by a mass defect in the E8→H4 vacuum.
+    Solve for the METRIC TENSOR induced by a mass defect in the E8->H4 vacuum.
     
     The key insight is that in a quasicrystal:
     - PHASON STRAIN = curvature in the "perpendicular space"
     - PHONON STRAIN = curvature in "physical space"
     
-    Both contribute to the effective metric g_μν(x).
+    Both contribute to the effective metric g_munu(x).
     
     For a point mass M at the origin:
     - The lattice deforms to accommodate the defect
     - This deformation is the gravitational field
-    - The metric g_μν = η_μν + h_μν where h_μν ~ GM/r
+    - The metric g_munu = eta_munu + h_munu where h_munu ~ GM/r
     """
     
     def __init__(self,
@@ -126,9 +126,9 @@ class E8GravitySolver:
         Compute the strain field around a mass defect.
         
         This solves the "Poisson equation" for the lattice:
-            ∇²h = 4πG·ρ
+            nabla^2h = 4piG·rho
         
-        where h is the metric perturbation and ρ is mass density.
+        where h is the metric perturbation and rho is mass density.
         
         We solve this iteratively using relaxation (Jacobi method).
         """
@@ -140,15 +140,15 @@ class E8GravitySolver:
         # Newton's constant (in natural units, set to give nice numbers)
         G_newton = 1.0
         
-        # Source term: 4πG·ρ
+        # Source term: 4piG·rho
         source = 4 * np.pi * G_newton * mass_density
         
         print(f"Solving Poisson equation for gravity: {n_relax_steps} iterations")
         print(f"Total mass: {np.sum(mass_density):.4f}")
         
-        # Jacobi relaxation for ∇²h = source
-        # ∇²h ≈ (h[i+1] + h[i-1] + ... - 6h[i]) / dx²
-        # => h[i] = (h[neighbors] - dx²·source) / 6
+        # Jacobi relaxation for nabla^2h = source
+        # nabla^2h ~ (h[i+1] + h[i-1] + ... - 6h[i]) / dx^2
+        # => h[i] = (h[neighbors] - dx^2·source) / 6
         
         for step in range(n_relax_steps):
             h_new = np.zeros_like(h)
@@ -161,7 +161,7 @@ class E8GravitySolver:
                 self.dx**2 * source[1:-1, 1:-1, 1:-1]
             ) / 6.0
             
-            # Boundary conditions: h → 0 at infinity (already zeros at edges)
+            # Boundary conditions: h -> 0 at infinity (already zeros at edges)
             
             # Update
             h = h_new.copy()
@@ -206,7 +206,7 @@ class E8GravitySolver:
         h = -G_newton * total_mass / r_reg
         
         print(f"  Potential computed. Range: [{np.min(h):.4f}, {np.max(h):.4f}]")
-        print(f"  h(at r=5) ≈ {-G_newton * total_mass / 5:.4f}")
+        print(f"  h(at r=5) ~ {-G_newton * total_mass / 5:.4f}")
         
         return h
     
@@ -273,13 +273,13 @@ class E8GravitySolver:
         GM = -a
         C = b
         
-        # Compute R² 
+        # Compute R^2 
         h_predicted = a / r_fit + b
         ss_res = np.sum((h_fit - h_predicted)**2)
         ss_tot = np.sum((h_fit - np.mean(h_fit))**2)
         r_squared = 1 - ss_res / ss_tot if ss_tot > 0 else 0
         
-        # Is it Newtonian? (R² > 0.9 and correct sign)
+        # Is it Newtonian? (R^2 > 0.9 and correct sign)
         is_newtonian = (r_squared > 0.8) and (GM > 0)
         
         return {
@@ -291,11 +291,11 @@ class E8GravitySolver:
     
     def compute_metric_tensor(self, h: np.ndarray) -> Dict[str, np.ndarray]:
         """
-        Compute the full metric tensor g_μν from the perturbation h.
+        Compute the full metric tensor g_munu from the perturbation h.
         
         In the weak-field limit:
-            g_00 = -(1 + 2Φ/c²) ≈ -1 + h_00
-            g_ij = (1 - 2Φ/c²)δ_ij ≈ δ_ij + h_ij
+            g_00 = -(1 + 2Φ/c^2) ~ -1 + h_00
+            g_ij = (1 - 2Φ/c^2)δ_ij ~ δ_ij + h_ij
         
         where Φ is the Newtonian potential (our h).
         """
@@ -318,7 +318,7 @@ class E8GravitySolver:
         """
         Compute the Ricci scalar curvature R from the metric.
         
-        In the weak-field limit: R ≈ -∇²h (up to constants)
+        In the weak-field limit: R ~ -nabla^2h (up to constants)
         """
         h = (metric['g_00'] + 1) / (-2)  # Extract h from g_00
         
@@ -331,7 +331,7 @@ class E8GravitySolver:
             6 * h[1:-1, 1:-1, 1:-1]
         ) / self.dx**2
         
-        # R ≈ -2∇²h in our conventions
+        # R ~ -2nabla^2h in our conventions
         R_scalar = -2 * laplacian_h
         
         return R_scalar
@@ -371,7 +371,7 @@ class E8GravitySolver:
         fit_result = self.fit_newtonian(radii, h_profile)
         
         # Step 5: Compute full metric tensor
-        print("\n[5] Computing metric tensor g_μν...")
+        print("\n[5] Computing metric tensor g_munu...")
         metric = self.compute_metric_tensor(h)
         
         # Step 6: Compute curvature
@@ -420,7 +420,7 @@ class E8GravitySolver:
         
         ax2.set_xlabel('Radius r')
         ax2.set_ylabel('Potential h(r)')
-        ax2.set_title(f'Radial Profile (R² = {result.newton_fit["r_squared"]:.3f})')
+        ax2.set_title(f'Radial Profile (R^2 = {result.newton_fit["r_squared"]:.3f})')
         ax2.legend()
         ax2.grid(True, alpha=0.3)
         ax2.set_xlim(0, self.grid_size // 2)
@@ -452,15 +452,15 @@ class E8GravitySolver:
         
         Input:
           Total mass M = 1.0
-          Grid size = {self.grid_size}³
+          Grid size = {self.grid_size}^3
         
         Fitted Parameters:
           GM = {result.newton_fit['GM']:.4f}
           Constant C = {result.newton_fit['C']:.4f}
-          R² = {result.newton_fit['r_squared']:.4f}
+          R^2 = {result.newton_fit['r_squared']:.4f}
         
         CONCLUSION:
-        {"✓ NEWTONIAN GRAVITY CONFIRMED" if result.is_newtonian else "⚠ Not Newtonian"}
+        {"[OK] NEWTONIAN GRAVITY CONFIRMED" if result.is_newtonian else "⚠ Not Newtonian"}
           
         The metric perturbation h(r) follows
         the 1/r law expected for Newtonian gravity!
@@ -520,11 +520,11 @@ def run_gravity_simulation():
     METRIC TENSOR ANALYSIS
     
     We placed a point mass at the center and measured the induced
-    deformation of the E8→H4 projection vacuum.
+    deformation of the E8->H4 projection vacuum.
     
     RESULTS:
       Fitted GM = {result.newton_fit['GM']:.4f}
-      Fit quality R² = {result.newton_fit['r_squared']:.4f}
+      Fit quality R^2 = {result.newton_fit['r_squared']:.4f}
       
     The metric perturbation follows:
       h(r) = -GM/r  (Newtonian potential)
@@ -534,15 +534,15 @@ def run_gravity_simulation():
       g_rr = (1 + 2GM/r)
       
     CONCLUSION:
-    {"✓ GRAVITY DERIVED FROM E8 GEOMETRY!" if result.is_newtonian else "⚠ Needs refinement"}
+    {"[OK] GRAVITY DERIVED FROM E8 GEOMETRY!" if result.is_newtonian else "⚠ Needs refinement"}
     
     The curvature of spacetime emerges naturally from the
     elastic strain of the quasicrystal vacuum!
     
     PHYSICS UNIFIED:
-      ✓ Quantum Field Theory (Higgs, Photon)
-      ✓ General Relativity (Metric Tensor, Curvature)
-      ✓ All from ONE geometric principle: E8 → H4
+      [OK] Quantum Field Theory (Higgs, Photon)
+      [OK] General Relativity (Metric Tensor, Curvature)
+      [OK] All from ONE geometric principle: E8 -> H4
     """)
     
     print("=" * 80)
