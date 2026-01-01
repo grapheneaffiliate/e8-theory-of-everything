@@ -63,7 +63,7 @@ Three terms. No free parameters. Everything emerges.
 
 **Distler-Garibaldi (2010):** "E8 has no chiral representations. Mirror fermions are unavoidable."
 
-**Our response:** Correct. But H4 locking makes them heavy:
+**My response:** Correct. But H4 locking makes them heavy:
 
 $$M_{mirror} = \sqrt{137} \times M_{Planck} \approx 10^{20} \text{ GeV}$$
 
