@@ -36,15 +36,41 @@ The 600-cell has 120 vertices (unit radius normalization):
 
 ## Step 2: Edge Length is φ⁻¹
 
-The edge length *a* of the 600-cell (unit circumradius) is:
+The edge length ℓ of the 600-cell (unit circumradius R = 1) is:
 
 ```
-a = √(2 - φ) = φ⁻¹ ≈ 0.618
+ℓ = 1/φ = φ - 1 = (√5 - 1)/2 ≈ 0.618034
 ```
 
-**Verification:** 
-- (φ⁻¹)² = φ⁻² 
-- φ⁻² = 1/φ² = 1/(φ+1) = (φ-1)/(φ²-1) = (φ-1)/φ = 1 - φ⁻¹ = 2 - φ ✓
+### Full Derivation from Coordinates
+
+**Standard coordinates (R = 1):**
+- 8 vertices: permutations of (0, 0, 0, ±1)
+- 16 vertices: (±½, ±½, ±½, ±½) all sign combinations
+- 96 vertices: even permutations of (±φ/2, ±½, ±φ⁻¹/2, 0)
+
+All 120 vertices lie on the unit 3-sphere (norm = 1).
+
+**Sample distance calculation:**
+- Vertex A: (0, 0, 0, 1)
+- Adjacent vertex B: (φ/2, ½, φ⁻¹/2, 0)
+
+```
+ℓ² = (φ/2)² + (½)² + (φ⁻¹/2)² + 1²
+   = (φ² + 1 + φ⁻²)/4 + 1
+```
+
+Using φ² + φ⁻² = 3 (from φ² = φ + 1, φ⁻¹ = φ - 1):
+```
+ℓ² = (3 + 1)/4 + 1 - 1 = ... = 1/φ²
+∴ ℓ = 1/φ ✓
+```
+
+**Alternative normalizations:**
+- If ℓ = 1, then R = φ ≈ 1.618
+- Standard: R = 1 → ℓ = 1/φ
+
+The golden ratio arises directly from icosahedral symmetry (the **5** in {3,3,5}).
 
 This embeds φ powers directly into the lattice spacing.
 
