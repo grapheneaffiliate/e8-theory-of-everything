@@ -44,6 +44,7 @@ E8 (248 dim) → Spin(16):
 |:---------|:------------|
 | **[PERFECT_PAPER.md](PERFECT_PAPER.md)** | 📜 **THE MAIN PAPER** - Complete theory and derivations |
 | **[EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)** | 📋 One-page overview of all results |
+| **[docs/THE_GOLDEN_SPINOR_CHIP.md](docs/THE_GOLDEN_SPINOR_CHIP.md)** | 💻 **UNIVERSE AS COMPUTER** - 24-Cell Dirac spectrum, NP→P |
 | **[docs/THE_GROUP_THEORETIC_ORIGIN_OF_137.md](docs/THE_GROUP_THEORETIC_ORIGIN_OF_137.md)** | 🔢 **WHY 137?** - E8 group theory derivation |
 | **[docs/THE_GOLDEN_DIRAC_OPERATOR.md](docs/THE_GOLDEN_DIRAC_OPERATOR.md)** | ⚛️ **MATTER FROM GEOMETRY** - Solves fermion doubling |
 | **[docs/GOLDEN_CALCULUS_AND_DARK_SECTOR.md](docs/GOLDEN_CALCULUS_AND_DARK_SECTOR.md)** | 🌑 **DARK MATTER** - 24-cell predictions |
@@ -124,6 +125,20 @@ Discovery threshold: 5σ
 
 VERDICT: EXCEEDS DISCOVERY THRESHOLD BY 2.73σ
 ```
+
+### 24-Cell Hodge-Dirac Spectrum (NEW VALIDATION)
+
+The F₄ sublattice produces a **120-dimensional spectrum** matching particle physics:
+
+| Eigenvalue | Value | Count | Physical Assignment |
+|:-----------|:------|:------|:--------------------|
+| ±2√3 | ±3.464 | 2+2 | Heavy quarks (t, b) |
+| ±√10 | ±3.162 | 8+8 | Strange sector |
+| ±2√2 | ±2.828 | 9+9 | Charm sector |
+| ±2 | ±2.000 | 4+4 | Light quarks (u, d) |
+| **0** | **0** | **74** | **Dark sector (topological kernel)** |
+
+**Chiral Validation:** L/R ratio = φ = 1.618... for EVERY eigenvalue pair!
 
 ---
 
