@@ -10,7 +10,7 @@ where W is the acceptance window in perpendicular space.
 
 PROOF CHAIN:
 1. Define W = P_perp(Voronoi(E8)) canonically
-2. Use Parseval: integral |chi_hat_W|^2 dq = Vol(W)
+2. Use Parseval: integral |chi_hat_W|^2 dq = Vol(W) 
 3. Therefore mu_Lambda(K) ~ Vol(B4(K)) * Vol(W)
 4. Suppression S = Vol(W) (after normalization)
 
