@@ -209,12 +209,17 @@ for u in u_values:
 zeta_inv = np.array(zeta_inv)
 
 # Find zeros (where zeta has poles / det vanishes)
-# Look for sign changes
+# Look for sign changes (use np.sign to avoid overflow)
 zero_locations = []
 for i in range(1, len(zeta_inv)):
-    if zeta_inv[i-1] * zeta_inv[i] < 0:
+    # Use sign comparison to avoid overflow in multiplication
+    sign_prev = np.sign(zeta_inv[i-1]) if np.isfinite(zeta_inv[i-1]) else 0
+    sign_curr = np.sign(zeta_inv[i]) if np.isfinite(zeta_inv[i]) else 0
+    if sign_prev * sign_curr < 0:
         # Interpolate zero location
-        u_zero = u_values[i-1] + (u_values[i] - u_values[i-1]) * abs(zeta_inv[i-1]) / (abs(zeta_inv[i-1]) + abs(zeta_inv[i]))
+        abs_prev = min(abs(zeta_inv[i-1]), 1e100)
+        abs_curr = min(abs(zeta_inv[i]), 1e100)
+        u_zero = u_values[i-1] + (u_values[i] - u_values[i-1]) * abs_prev / (abs_prev + abs_curr)
         zero_locations.append(u_zero)
 
 print(f"    Found {len(zero_locations)} zeros in range")
@@ -310,15 +315,17 @@ print("\n[7] Generating Plots...")
 plt.style.use('dark_background')
 fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 
-# Plot 1: Ihara Zeta
+# Plot 1: Ihara Zeta (handle overflow by clipping)
 ax1 = axes[0, 0]
-ax1.plot(u_values, np.abs(zeta_inv), color='cyan', lw=2)
+zeta_plot = np.clip(np.abs(zeta_inv), 1e-10, 1e100)  # Clip to avoid inf
+ax1.plot(u_values, zeta_plot, color='cyan', lw=2)
 for u0 in zero_locations[:5]:
     ax1.axvline(x=u0, color='magenta', linestyle='--', alpha=0.7)
 ax1.set_title("Ihara Zeta det(I - Au + (D-I)u²)", color='gold')
 ax1.set_xlabel("u")
 ax1.set_ylabel("|Z⁻¹(u)|")
 ax1.set_yscale('log')
+ax1.set_ylim([1e-10, 1e50])  # Set explicit limits
 ax1.grid(True, alpha=0.2)
 
 # Plot 2: Cycle Count by Length
@@ -390,8 +397,8 @@ THEOREM STATUS:
   ⚠️ Bridge: Cycle lengths are integers 3,4,5,... not ln(p)
      → Need symbolic dynamics to relabel
 
-The key missing piece: We have cycle lengths = {3,4,5,...}
-but we need cycle lengths = {ln(2), ln(3), ln(5),...}
+The key missing piece: We have cycle lengths = {{3,4,5,...}}
+but we need cycle lengths = {{ln(2), ln(3), ln(5),...}}
 
 This requires the SYMBOLIC DYNAMICS construction.
 """)
