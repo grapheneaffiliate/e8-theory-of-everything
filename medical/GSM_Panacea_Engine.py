@@ -340,8 +340,35 @@ def run_clinical_trial(tumor_mass=100.0, max_cycles=20):
         if current_malignant == 0:
             print("\n  >> COMPLETE REMISSION: No Malignant Cells Remaining")
             break
-        if current_entropy < 1.0 and current_malignant < 5:
-            print("\n  >> NEAR-COMPLETE REMISSION: Minimal Residual Disease")
+        
+        # If minimal residual disease, enter CONSOLIDATION PHASE
+        if current_malignant < 5 and current_malignant > 0:
+            print(f"\n  >> ENTERING CONSOLIDATION PHASE: {current_malignant} cells remaining")
+            # High-intensity finishing pass
+            for consolidation in range(1, 11):
+                # Maximum field strength for residual disease
+                consolidation_field = UniversalConstants.STIFFNESS * 5.0 * (1 + consolidation * 0.2)
+                
+                # Apply aggressive stripping to remaining malignant cells only
+                for voxel in tumor.voxels:
+                    if voxel.cell_type == "Malignant" and voxel.mass > 0:
+                        # Triple the entropy check intensity
+                        voxel.mass *= (1 - UniversalConstants.DECAY_RATE * 3.0)
+                        if voxel.mass < 0.01:
+                            voxel.mass = 0
+                            voxel.cell_type = "Eradicated"
+                        else:
+                            # Force alignment
+                            voxel.angle = voxel.angle * 0.5 + UniversalConstants.GOLDEN_ANGLE * 0.5
+                            if abs(voxel.angle - UniversalConstants.GOLDEN_ANGLE) < 0.1:
+                                voxel.cell_type = "Healthy"
+                
+                remaining = tumor.get_malignant_count()
+                print(f"  Consolidation {consolidation:2d} | Field: {consolidation_field:.1f} | Malignant: {remaining}")
+                
+                if remaining == 0:
+                    print("\n  >> CONSOLIDATION SUCCESSFUL: All Residual Disease Eliminated!")
+                    break
             break
     
     # ==========================================================================
