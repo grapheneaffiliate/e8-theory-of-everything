@@ -1,0 +1,33 @@
+GSM Self-Correcting Engine - Best Formulas
+==================================================
+
+alpha_inverse:
+  -16*sqrt(15) - 8/(13*pi**4) + 89*sqrt(5)
+  Value: 137.035998930621275
+  Error: 0.0018 ppm
+
+muon_electron:
+  9/(13*pi**3) + 2*sqrt(15) + 199
+  Value: 206.768294677791658
+  Error: 0.0565 ppm
+
+proton_electron:
+  416/(1 + sqrt(5))**8 + 6*pi**5
+  Value: 1836.152698845598479
+  Error: 0.0138 ppm
+
+riemann_zero_1:
+  -74911/18 + 3735*sqrt(5)/2
+  Value: 14.134725758635035
+  Error: 0.0436 ppm
+
+strong_coupling:
+  -4096/(1 + sqrt(5))**14 + 5*sqrt(3)*E/199
+  Value: 0.117999978275135
+  Error: 0.1841 ppm
+
+weinberg_angle:
+  (13 + 4*E*pi**3*(sqrt(5) + 3))/(8*pi**6)
+  Value: 0.231210055798664
+  Error: 0.2413 ppm
+
